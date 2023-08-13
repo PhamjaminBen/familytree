@@ -27,7 +27,7 @@ interface familyTreeData {
 		gender?: string;
 		img?: string;
 		bio?: string;
-	}[];
+	};
 }
 // function Familytree(props: TreeProps) {
 // 	if (typeof window === "object") {
@@ -49,7 +49,7 @@ export default function HomePage() {
 	// console.log(familyTreeData);
 
 	useEffect(() => {
-		let treeData: familyTreeData;
+		let treeData: familyTreeData[];
 		const getData = async () => {
 			const data = await fetch("https://api.npoint.io/a61a5e5897c63aae4749");
 			treeData = await data.json();
@@ -60,7 +60,7 @@ export default function HomePage() {
 				mode: "dark",
 				nodeBinding: nodeBinding,
 				nodes: treeData,
-				editForm: { titleBinding: "name", bioBinding: "bio" },
+				editForm: { titleBinding: "name" },
 			});
 		});
 
