@@ -56,12 +56,33 @@ export default function HomePage() {
 		};
 
 		getData().then(() => {
-			new FamilyTree(document.getElementById("tree") as any, {
+			const tree = new FamilyTree(document.getElementById("tree") as any, {
 				mode: "dark",
 				nodeBinding: nodeBinding,
 				nodes: treeData,
 				editForm: { titleBinding: "name" },
 			});
+			// let originaltreeupdate = tree.update;
+			// console.log(originaltreeupdate.toString());
+			// tree.update = function (e) {
+			// 	console.log(e);
+			// 	originaltreeupdate(e);
+			// 	return tree;
+			// };
+			// console.log(tree.update.toString());
+
+			tree.update = function (e: any) {
+				if (tree.config.nodes === undefined) return tree;
+				let nodes: Array<any>;
+				nodes = tree.config.nodes;
+				for (var t = 0; t < tree.config.nodes.length; t++) {
+					if (nodes[t].id == e.id) {
+						tree.config.nodes[t] = e;
+						break;
+					}
+				}
+				return tree;
+			};
 		});
 
 		// fetch("api", {
