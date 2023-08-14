@@ -1,6 +1,9 @@
 import NavBar from "@/components/navbar";
 import "./globals.css";
 import type { Metadata } from "next";
+import { MongoClient } from "mongodb";
+// import { connectDB } from "@/scripts/database";
+import { useEffect } from "react";
 // import { Inter } from "next/font/google";
 
 // const inter = Inter({ subsets: ["latin"] });
