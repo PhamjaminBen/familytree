@@ -1,14 +1,15 @@
 import { writeFile } from "node:fs/promises";
 import { database } from "@/scripts/database";
 
-export async function GET(request: Request) {
-	// if (!database) return JSON.stringify({ response: "hnot ok" });
-	// const cursor = database?.find({});
+export async function GET() {
+	const retobj = [];
+	if (!database) return JSON.stringify({ response: "hnot ok" });
+	const cursor = database?.find({}).project({ _id: 0 });
 
-	// for await (let doc of cursor) {
-	// 	console.log(doc);
-	// }
-	return JSON.stringify({ response: "ok" });
+	for await (let doc of cursor) {
+		retobj.push(doc);
+	}
+	return new Response(JSON.stringify(retobj));
 }
 
 export async function PATCH(request: Request) {

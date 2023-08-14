@@ -51,7 +51,7 @@ export default function HomePage() {
 	useEffect(() => {
 		let treeData: familyTreeData[];
 		const getData = async () => {
-			const data = await fetch("https://api.npoint.io/a61a5e5897c63aae4749");
+			const data = await fetch("/api");
 			treeData = await data.json();
 		};
 
