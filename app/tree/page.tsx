@@ -60,7 +60,6 @@ export default function HomePage() {
 				mode: "dark",
 				nodeBinding: nodeBinding,
 				nodes: treeData,
-				editForm: { titleBinding: "name" },
 			});
 			// let originaltreeupdate = tree.update;
 			// console.log(originaltreeupdate.toString());
@@ -72,19 +71,11 @@ export default function HomePage() {
 			// console.log(tree.update.toString());
 
 			tree.update = function (e: any) {
-				console.log(e);
 				if (tree.config.nodes === undefined) return tree;
 				let nodes: Array<any>;
 				nodes = tree.config.nodes;
 				for (var t = 0; t < tree.config.nodes.length; t++) {
 					if (nodes[t].id == e.id) {
-						tree.config.nodes[t] = e;
-						break;
-					}
-				}
-				for (var t = 0; t < treeData.length; t++) {
-					let data: any = treeData[t];
-					if (data.id == e.id) {
 						tree.config.nodes[t] = e;
 						break;
 					}

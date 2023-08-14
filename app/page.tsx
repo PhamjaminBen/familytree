@@ -1,7 +1,7 @@
-export default function home() {
+export default async function home() {
 	return (
-		<div>
-			<h1> Hello </h1>
-		</div>
+		<>
+			<h1 className='m-auto text-5xl text-center'> Hello </h1>
+		</>
 	);
 }
