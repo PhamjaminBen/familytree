@@ -30,15 +30,15 @@ export async function PATCH(request: Request) {
 
 	const client = new MongoClient(process.env.MONGODB_URI);
 	database = client.db("familytree").collection("treedata");
-	console.log("edit open");
+	// console.log("edit open", data);
 
 	const retobj = [];
 	if (!database) return JSON.stringify({ response: "no db" });
-	const cursor = database?.find({ id: data.id }).project({ _id: 0 });
+	const cursor = database.findOneAndReplace(
+		{ id: data.person.id },
+		data.person
+	);
 
-	for await (let doc of cursor) {
-		retobj.push(doc);
-	}
 	client.close();
 
 	return JSON.stringify({ response: "ok" });

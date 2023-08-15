@@ -80,19 +80,18 @@ export default function HomePage() {
 						break;
 					}
 				}
+				fetch("api", {
+					method: "PATCH",
+					body: JSON.stringify({
+						person: e,
+					}),
+					headers: {
+						"content-type": "application/json",
+					},
+				});
 				return tree;
 			};
 		});
-
-		// fetch("api", {
-		// 	method: "PATCH",
-		// 	body: JSON.stringify({
-		// 		treeData,
-		// 	}),
-		// 	headers: {
-		// 		"content-type": "application/json",
-		// 	},
-		// });
 
 		setTimeout(() => {
 			console.log(treeData);

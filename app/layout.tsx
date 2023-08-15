@@ -14,11 +14,11 @@ export default async function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className='flex flex-col min-h-screen'>
-				<header className=' sticky z-50 top-0'>
+			<body className='min-h-screen'>
+				<header className='sticky z-50 top-0'>
 					<NavBar />
 				</header>
-				<main className='grow'>{children}</main>
+				<main className=''>{children}</main>
 			</body>
 		</html>
 	);
