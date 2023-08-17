@@ -29,7 +29,7 @@ enum GenderEnum {
 	other = "other",
 }
 
-export default function add() {
+export default function AddForm() {
 	const [data, setData] = useState<any>(null);
 
 	useEffect(() => {
