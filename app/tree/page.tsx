@@ -1,7 +1,7 @@
 "use client";
 
 import FamilyTree from "@balkangraph/familytree.js";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // import familyTreeData from "@/public/familytreedata.json";
 
 interface TreeProps {
@@ -17,7 +17,7 @@ interface TreeProps {
 	}[];
 }
 
-interface familyTreeData {
+export interface familyTreeData {
 	nodes: {
 		id: number;
 		pids?: number[];
@@ -47,19 +47,21 @@ var nodeBinding = {
 export default function HomePage() {
 	// // 	const [data, setData] = useState<familyTreeData | null>(null);
 	// console.log(familyTreeData);
+	const [loading, setLoading] = useState<Boolean>(true);
 
 	useEffect(() => {
-		let treeData: familyTreeData[];
 		const getData = async () => {
 			const data = await fetch("/api");
-			treeData = await data.json();
+			const cleanData = await data.json();
+			setLoading(false);
+			return cleanData;
 		};
 
-		getData().then(() => {
+		getData().then((d) => {
 			const tree = new FamilyTree(document.getElementById("tree") as any, {
 				mode: "dark",
 				nodeBinding: nodeBinding,
-				nodes: treeData,
+				nodes: d,
 			});
 			// let originaltreeupdate = tree.update;
 			// console.log(originaltreeupdate.toString());
@@ -92,14 +94,15 @@ export default function HomePage() {
 				return tree;
 			};
 		});
-
-		setTimeout(() => {
-			console.log(treeData);
-		}, 10000);
 	}, []);
-
 	return (
-		// <></>
-		<div id='tree' className='h-2xl w-2xl'></div>
+		<>
+			<div id='tree' className='h-[90vh] w-2xl'></div>
+			{loading && (
+				<h1 className='m-auto text-[5rem] font-bold w-full text-center absolute top-1/3 '>
+					Loading...
+				</h1>
+			)}
+		</>
 	);
 }

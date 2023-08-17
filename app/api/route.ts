@@ -32,7 +32,6 @@ export async function PATCH(request: Request) {
 	database = client.db("familytree").collection("treedata");
 	// console.log("edit open", data);
 
-	const retobj = [];
 	if (!database) return JSON.stringify({ response: "no db" });
 	const cursor = database.findOneAndReplace(
 		{ id: data.person.id },
@@ -41,5 +40,41 @@ export async function PATCH(request: Request) {
 
 	client.close();
 
+	return JSON.stringify({ response: "ok" });
+}
+
+export async function POST(request: Request) {
+	console.log("posting");
+	const data = await request.json();
+	const person = data.person;
+
+	let database: null | Collection<Document> = null;
+
+	if (!process.env.MONGODB_URI) return JSON.stringify({ response: "ERROR" });
+
+	const client = new MongoClient(process.env.MONGODB_URI);
+	database = client.db("familytree").collection("treedata");
+
+	if (person.pids) {
+		console.log("updating partner");
+		database.updateOne({ id: person.pids[0] }, { $set: { pids: [person.id] } });
+	}
+
+	if (person.children) {
+		console.log(person.children);
+		for (const childId of person.children) {
+			console.log("child", childId);
+			if (person.gender === "female") {
+				database.updateOne({ id: childId }, { $set: { mid: person.id } });
+			} else if (person.gender === "male") {
+				database.updateOne({ id: childId }, { $set: { fid: person.id } });
+			}
+		}
+		delete person.children;
+	}
+
+	database.insertOne(data.person);
+
+	client.close();
 	return JSON.stringify({ response: "ok" });
 }
