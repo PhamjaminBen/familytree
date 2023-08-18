@@ -18,6 +18,9 @@ type Inputs = {
 	hobbies: string;
 	phone: string;
 	bio: string;
+	instagram: string;
+	email: string;
+	facebook: string;
 };
 
 interface input {
@@ -33,6 +36,9 @@ interface input {
 	hobbies?: string;
 	phone?: string;
 	bio?: string;
+	instagram: string;
+	email: string;
+	facebook: string;
 }
 
 export default function AddForm() {
