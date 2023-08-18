@@ -20,7 +20,7 @@ export default function NavBar() {
 						</Link>
 					</li>
 					<li>
-						<Link href='/tree/add' className='hover:underline'>
+						<Link href='/add' className='hover:underline'>
 							Add Members
 						</Link>
 					</li>

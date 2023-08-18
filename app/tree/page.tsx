@@ -1,8 +1,8 @@
 "use client";
 
+import addTemplate, { testData } from "@/lib/familytreetemplate";
 import FamilyTree from "@balkangraph/familytree.js";
 import { useEffect, useState } from "react";
-// import familyTreeData from "@/public/familytreedata.json";
 
 interface TreeProps {
 	nodeBinding: { field_0: string; img_0: string };
@@ -29,20 +29,13 @@ export interface familyTreeData {
 		bio?: string;
 	};
 }
-// function Familytree(props: TreeProps) {
-// 	if (typeof window === "object") {
-// 		var chart = new FamilyTree(document.getElementById("tree") as any, {
-// 			nodeBinding: props.nodeBinding,
-// 			nodes: props.nodes,
-// 		});
-// 	}
-// 	return null;
-// }
 
 var nodeBinding = {
 	field_0: "name",
 	// field_1: "mid",
 };
+
+addTemplate(FamilyTree);
 
 export default function HomePage() {
 	// // 	const [data, setData] = useState<familyTreeData | null>(null);
@@ -57,23 +50,48 @@ export default function HomePage() {
 			return cleanData;
 		};
 
+		let tree: FamilyTree;
 		getData().then((d) => {
-			const tree = new FamilyTree(document.getElementById("tree") as any, {
-				mode: "dark",
-				nodeBinding: nodeBinding,
+			console.log(d);
+			tree = new FamilyTree(document.getElementById("tree") as any, {
+				template: "myTemplate",
+				nodeBinding: {
+					field_0: "name",
+					// field_1: "bio",
+					img_0: "photo",
+				},
+				levelSeparation: 100,
 				nodes: d,
+				nodeTreeMenu: true,
+				editForm: {
+					titleBinding: "name",
+					photoBinding: "photo",
+					elements: [
+						{
+							type: "textbox",
+							label: "Full Name",
+							binding: "name",
+						},
+						{
+							type: "select",
+							options: [
+								{ value: "male", text: "male" },
+								{ value: "female", text: "female" },
+								{ value: "other", text: "other" },
+							],
+							label: "gender",
+							binding: "gender",
+						},
+					],
+				},
 			});
-			// let originaltreeupdate = tree.update;
-			// console.log(originaltreeupdate.toString());
-			// tree.update = function (e) {
-			// 	console.log(e);
-			// 	originaltreeupdate(e);
-			// 	return tree;
-			// };
-			// console.log(tree.update.toString());
 
 			tree.update = function (e: any) {
 				if (tree.config.nodes === undefined) return tree;
+
+				fetch("api", { method: "DELETE" });
+
+				console.log("tree", tree.config.nodes);
 				let nodes: Array<any>;
 				nodes = tree.config.nodes;
 				for (var t = 0; t < tree.config.nodes.length; t++) {
@@ -82,22 +100,34 @@ export default function HomePage() {
 						break;
 					}
 				}
-				fetch("api", {
-					method: "PATCH",
-					body: JSON.stringify({
-						person: e,
-					}),
-					headers: {
-						"content-type": "application/json",
-					},
-				});
+				for (var t = 0; t < tree.config.nodes.length; t++) {
+					fetch("api", {
+						method: "PATCH",
+						body: JSON.stringify({
+							person: tree.config.nodes[t],
+						}),
+						headers: {
+							"content-type": "application/json",
+						},
+					});
+				}
+				// fetch("api", {
+				// 	method: "PATCH",
+				// 	body: JSON.stringify({
+				// 		person: e,
+				// 	}),
+				// 	headers: {
+				// 		"content-type": "application/json",
+				// 	},
+				// });
+				console.log(tree.config.nodes);
 				return tree;
 			};
 		});
 	}, []);
 	return (
 		<>
-			<div id='tree' className='h-[90vh] w-2xl'></div>
+			<div id='tree' className='h-[90vh]'></div>
 			{loading && (
 				<h1 className='m-auto text-[5rem] font-bold w-full text-center absolute top-1/3 '>
 					Loading...
