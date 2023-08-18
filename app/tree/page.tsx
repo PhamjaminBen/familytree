@@ -35,6 +35,64 @@ var nodeBinding = {
 	// field_1: "mid",
 };
 
+const editElements = [
+	{
+		type: "textbox",
+		label: "Full Name",
+		binding: "name",
+	},
+	{
+		type: "select",
+		options: [
+			{ value: "male", text: "male" },
+			{ value: "female", text: "female" },
+			{ value: "other", text: "other" },
+		],
+		label: "gender",
+		binding: "gender",
+	},
+	{
+		type: "date",
+		label: "Date of Birth",
+		binding: "birthdate",
+	},
+	{
+		type: "textbox",
+		label: "Profession",
+		binding: "profession",
+	},
+	{
+		type: "textbox",
+		label: "Hobbies",
+		binding: "hobbies",
+	},
+	{
+		type: "textbox",
+		label: "Biography",
+		binding: "biography",
+	},
+	{
+		type: "textbox",
+		label: "Phone",
+		binding: "phone",
+	},
+	{
+		type: "textbox",
+		label: "Email",
+		binding: "email",
+	},
+	{
+		type: "textbox",
+		label: "Instagram",
+		binding: "instagram",
+	},
+	{
+		type: "textbox",
+		label: "Facebook",
+		binding: "facebook",
+	},
+];
+
 addTemplate(FamilyTree);
 
 export default function HomePage() {
@@ -66,23 +124,7 @@ export default function HomePage() {
 				editForm: {
 					titleBinding: "name",
 					photoBinding: "photo",
-					elements: [
-						{
-							type: "textbox",
-							label: "Full Name",
-							binding: "name",
-						},
-						{
-							type: "select",
-							options: [
-								{ value: "male", text: "male" },
-								{ value: "female", text: "female" },
-								{ value: "other", text: "other" },
-							],
-							label: "gender",
-							binding: "gender",
-						},
-					],
+					elements: editElements,
 				},
 			});
 

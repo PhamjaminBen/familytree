@@ -1,10 +1,7 @@
 "use client";
 
-import addTemplate from "@/lib/familytreetemplate";
-import FamilyTree from "@balkangraph/familytree.js";
 import { useEffect, useState } from "react";
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
-import { MultiSelect } from "react-multi-select-component";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 type Inputs = {
 	name: string;
@@ -40,6 +37,9 @@ interface input {
 	email: string;
 	facebook: string;
 }
+const checkKeyDown = (e: React.KeyboardEvent) => {
+	if (e.key === "Enter") e.preventDefault();
+};
 
 export default function AddForm() {
 	const [data, setData] = useState<any>(null);
@@ -69,17 +69,6 @@ export default function AddForm() {
 				delete entry[field as keyof typeof entry];
 			}
 		}
-		// console.log(Math.max(0, ...data.map((x: any) => x.id)));
-		entry.id = Math.max(0, ...data.map((x: any) => x.id)) + 1;
-
-		if (entry.pids) {
-			entry.pids = [parseInt(entry.pids as string)];
-		}
-		if (entry.children) {
-			entry.children = entry.children.map(
-				(child: { label: string; value: number }) => child.value
-			);
-		}
 
 		console.log(entry);
 		fetch("../api", {
@@ -94,8 +83,6 @@ export default function AddForm() {
 		window.location.reload();
 	};
 
-	const [currgender, changeCurrGender] = useState("female");
-
 	if (!data)
 		return (
 			<h1 className='m-auto text-[5rem] font-bold w-full text-center absolute top-1/3 '>
@@ -106,6 +93,9 @@ export default function AddForm() {
 	return (
 		<form
 			className='py-10 w-2/5 m-auto flex flex-col space-y-3'
+			onKeyDown={(e) => {
+				checkKeyDown(e);
+			}}
 			onSubmit={handleSubmit(onSubmit)}
 		>
 			<h1 className='text-5xl font-bold pb-10'>Personal Info</h1>
@@ -119,7 +109,6 @@ export default function AddForm() {
 			<label className='pt-5'>Gender</label>
 			<select
 				{...register("gender", { required: true })}
-				onChange={(e) => changeCurrGender(e.target.value)}
 				className='w-fit px-5 py-3 border-2 border-slate-800/50 rounded-xl'
 			>
 				<option value='female'>female</option>
@@ -201,14 +190,14 @@ export default function AddForm() {
 			<label className='pt-5'>Instagram handle</label>
 			<input
 				{...register("instagram")}
-				type='email'
+				type='text'
 				className='px-5 py-3 border-2 border-slate-800/50 rounded-xl w-full'
 			/>
 
 			<label className='pt-5'>Facebook link</label>
 			<input
 				{...register("facebook")}
-				type='email'
+				type='text'
 				className='px-5 py-3 border-2 border-slate-800/50 rounded-xl w-full'
 			/>
 

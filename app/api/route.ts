@@ -66,23 +66,7 @@ export async function POST(request: Request) {
 	if (!process.env.MONGODB_URI) return JSON.stringify({ response: "ERROR" });
 
 	const client = new MongoClient(process.env.MONGODB_URI);
-	database = client.db("familytree").collection("treedata");
-
-	if (person.pids) {
-		console.log("updating partner");
-		database.updateOne({ id: person.pids[0] }, { $set: { pids: [person.id] } });
-	}
-
-	if (person.children) {
-		for (const childId of person.children) {
-			if (person.gender === "female") {
-				database.updateOne({ id: childId }, { $set: { mid: person.id } });
-			} else if (person.gender === "male") {
-				database.updateOne({ id: childId }, { $set: { fid: person.id } });
-			}
-		}
-		delete person.children;
-	}
+	database = client.db("familytree").collection("formData");
 
 	database.insertOne(data.person);
 
