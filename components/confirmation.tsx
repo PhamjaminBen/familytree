@@ -16,7 +16,7 @@ export default function Confirmation(props: any) {
 				className='bg-slate-100 text-slate-800 absolute top-[58vh] py-3 px-5  text-lg rounded-xl hover:text-white transition'
 				onClick={onSubmit}
 			>
-				Back to Site
+				Add Another Member
 			</Button>
 		</div>
 	);
