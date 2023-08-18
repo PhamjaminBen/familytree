@@ -14,7 +14,7 @@ export default async function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className='min-h-screen'>
+			<body className='min-h-screen w-screen'>
 				<header className='sticky z-50 top-0'>
 					<NavBar />
 				</header>

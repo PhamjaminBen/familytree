@@ -92,7 +92,7 @@ export default function AddForm() {
 
 	return (
 		<form
-			className='py-10 w-2/5 m-auto flex flex-col space-y-3'
+			className='px-5 py-10 max-w-full md:w-2/5 m-auto flex flex-col space-y-3'
 			onKeyDown={(e) => {
 				checkKeyDown(e);
 			}}
