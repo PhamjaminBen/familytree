@@ -128,8 +128,8 @@ export default function AddForm() {
 				If you would like to add a member to the family tree, please fill in
 				this form. <br />
 				<br />
-				If a field doesn't apply to you or you would like to omit it, feel free
-				to leave it blank, we only require your name, and some form of
+				If a field doesn&apos;t apply to you or you would like to omit it, feel
+				free to leave it blank, we only require your name, and some form of
 				connection to a family member of the tree! <br />
 				<br />
 				For those concerned about privacy, we will omit the email and phone
