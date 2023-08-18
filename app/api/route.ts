@@ -46,7 +46,7 @@ export async function PATCH(request: Request) {
 	// console.log("edit open", data);
 
 	if (!database) return JSON.stringify({ response: "no db" });
-	const cursor = database.replaceOne({ id: data.person.id }, data.person, {
+	database.replaceOne({ id: data.person.id }, data.person, {
 		upsert: true,
 	});
 	// console.log(cursor);
@@ -68,7 +68,8 @@ export async function POST(request: Request) {
 	const client = new MongoClient(process.env.MONGODB_URI);
 	database = client.db("familytree").collection("formData");
 
-	database.insertOne(data.person);
+	const cursor = await database.insertOne(data.person);
+	console.log("inserted id: ", cursor.insertedId);
 
 	client.close();
 	return JSON.stringify({ response: "ok" });

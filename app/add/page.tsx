@@ -1,7 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler, Controller, Field } from "react-hook-form";
+import { Cloudinary } from "@cloudinary/url-gen";
+
+const cld = new Cloudinary({
+	cloud: {
+		cloudName: "dogeq8qft",
+		apiSecret: "Vn5ftFV0eZJPkVcAUWJ95w7mYoY",
+		apiKey: "771763696918615",
+	},
+});
 
 type Inputs = {
 	name: string;
@@ -18,6 +28,7 @@ type Inputs = {
 	instagram: string;
 	email: string;
 	facebook: string;
+	portrait: any;
 };
 
 interface input {
@@ -36,6 +47,7 @@ interface input {
 	instagram: string;
 	email: string;
 	facebook: string;
+	portrait: any;
 }
 const checkKeyDown = (e: React.KeyboardEvent) => {
 	if (e.key === "Enter") e.preventDefault();
@@ -63,14 +75,28 @@ export default function AddForm() {
 		control,
 	} = useForm<Inputs>();
 
-	const onSubmit: SubmitHandler<Inputs> = (entry: input) => {
-		for (const [field, answer] of Object.entries(entry)) {
-			if (answer === "None" || answer === "") {
-				delete entry[field as keyof typeof entry];
-			}
+	const [img, setImg] = useState("");
+
+	const onSubmit: SubmitHandler<Inputs> = async (entry: any) => {
+		if (entry.portrait) {
+			const formData = new FormData();
+			formData.append("file", entry.portrait);
+			formData.append("upload_preset", "image_preset");
+			const result = await fetch(
+				`https://api.cloudinary.com/v1_1/dogeq8qft/image/upload`,
+				{ method: "POST", body: formData }
+			)
+				.then((result) => {
+					return result.json();
+				})
+				.then((data) => {
+					delete entry.portrait;
+					entry.portrait = data.url;
+					console.log(entry);
+				});
 		}
 
-		console.log(entry);
+		// console.log(entry, result);
 		fetch("../api", {
 			method: "POST",
 			body: JSON.stringify({
@@ -80,7 +106,7 @@ export default function AddForm() {
 				"content-type": "application/json",
 			},
 		});
-		window.location.reload();
+		// window.location.reload();
 	};
 
 	if (!data)
@@ -89,7 +115,6 @@ export default function AddForm() {
 				Loading...
 			</h1>
 		);
-
 	return (
 		<form
 			className='px-5 py-10 max-w-full md:w-2/5 m-auto flex flex-col space-y-3'
@@ -98,8 +123,21 @@ export default function AddForm() {
 			}}
 			onSubmit={handleSubmit(onSubmit)}
 		>
+			<h1 className='text-5xl font-bold pb-3'>New Member Form</h1>
+			<p className='bg-slate-100 p-5 rounded-3xl'>
+				If you would like to add a member to the family tree, please fill in
+				this form. <br />
+				<br />
+				If a field doesn't apply to you or you would like to omit it, feel free
+				to leave it blank, we only require your name, and some form of
+				connection to a family member of the tree! <br />
+				<br />
+				For those concerned about privacy, we will omit the email and phone
+				number on the public website.
+			</p>
+
 			<h1 className='text-5xl font-bold pb-10'>Personal Info</h1>
-			<label>Name</label>
+			<label>Full Name</label>
 			<input
 				placeholder='Full Name'
 				{...register("name", { required: true })}
@@ -116,7 +154,35 @@ export default function AddForm() {
 				<option value='other'>other</option>
 			</select>
 
+			<label className='pt-5'>Image of self</label>
+			{img && (
+				<Image className='w-auto' src={img} alt='' height={200} width={200} />
+			)}
+			<Controller
+				control={control}
+				name={"portrait"}
+				render={({ field: { value, onChange, ...field } }) => {
+					return (
+						<input
+							{...field}
+							value={value?.fileName}
+							onChange={(event: any) => {
+								setImg(URL.createObjectURL(event.target.files[0]));
+								onChange(event.target.files[0]);
+							}}
+							type='file'
+							id='picture'
+						/>
+					);
+				}}
+			/>
+
 			<h1 className='text-5xl font-bold pt-10'>Family Info</h1>
+			<p className='bg-slate-100 p-5 rounded-3xl'>
+				Please try to use full names for the relatives that you enter. Please
+				fill out at least one box in this section so we know how you are related
+				to the rest of the tree.
+			</p>
 			<label className='pt-5'>Husband/Wife</label>
 			<input
 				{...register("partner")}
@@ -135,7 +201,7 @@ export default function AddForm() {
 				className='px-5 py-3 border-2 border-slate-800/50 rounded-xl w-full'
 			/>
 
-			<label className='pt-5'>children (separate by space or comma)</label>
+			<label className='pt-5'>Children (separate by space or comma)</label>
 			<input
 				{...register("children")}
 				className='px-5 py-3 border-2 border-slate-800/50 rounded-xl w-full'
@@ -154,6 +220,7 @@ export default function AddForm() {
 			<input
 				{...register("profession")}
 				type='text'
+				placeholder='Teacher, programmer, etc.'
 				className='px-5 py-3 border-2 border-slate-800/50 rounded-xl w-full'
 			/>
 
@@ -161,6 +228,7 @@ export default function AddForm() {
 			<input
 				{...register("hobbies")}
 				type='text'
+				placeholder='e.g. a sport you play, or passion you have. "Volleyball, Piano, ..."'
 				className='px-5 py-3 border-2 border-slate-800/50 rounded-xl w-full'
 			/>
 
@@ -187,7 +255,7 @@ export default function AddForm() {
 				className='px-5 py-3 border-2 border-slate-800/50 rounded-xl w-full'
 			/>
 
-			<label className='pt-5'>Instagram handle</label>
+			<label className='pt-5'>Instagram @</label>
 			<input
 				{...register("instagram")}
 				type='text'

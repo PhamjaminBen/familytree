@@ -125,13 +125,19 @@ export default function HomePage() {
 					titleBinding: "name",
 					photoBinding: "photo",
 					elements: editElements,
+					addMore: undefined,
+					addMoreFieldName: undefined,
+					addMoreBtn: undefined,
+					buttons: {
+						pdf: null,
+						share: null,
+					},
 				},
+				miniMap: true,
 			});
 
 			tree.update = function (e: any) {
 				if (tree.config.nodes === undefined) return tree;
-
-				fetch("api", { method: "DELETE" });
 
 				console.log("tree", tree.config.nodes);
 				let nodes: Array<any>;
@@ -153,16 +159,6 @@ export default function HomePage() {
 						},
 					});
 				}
-				// fetch("api", {
-				// 	method: "PATCH",
-				// 	body: JSON.stringify({
-				// 		person: e,
-				// 	}),
-				// 	headers: {
-				// 		"content-type": "application/json",
-				// 	},
-				// });
-				console.log(tree.config.nodes);
 				return tree;
 			};
 		});
