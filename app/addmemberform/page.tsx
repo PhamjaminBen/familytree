@@ -4,6 +4,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useForm, SubmitHandler, Controller, Field } from "react-hook-form";
 import { Cloudinary } from "@cloudinary/url-gen";
+import { redirect } from "next/navigation";
+import { useNavigate } from "react-router-dom";
+import Confirmation from "@/components/confirmation";
 
 const cld = new Cloudinary({
 	cloud: {
@@ -53,19 +56,19 @@ const checkKeyDown = (e: React.KeyboardEvent) => {
 	if (e.key === "Enter") e.preventDefault();
 };
 
-export default function AddForm() {
-	const [data, setData] = useState<any>(null);
+export default function AddMemberForm() {
+	// const [data, setData] = useState<any>(null);
 
-	useEffect(() => {
-		const getData = async () => {
-			const data = await fetch("/api");
-			const treeData = await data.json();
-			return treeData;
-		};
-		if (!data) {
-			getData().then((data) => setData(data));
-		}
-	}, [data]);
+	// useEffect(() => {
+	// 	const getData = async () => {
+	// 		const data = await fetch("/api");
+	// 		const treeData = await data.json();
+	// 		return treeData;
+	// 	};
+	// 	if (!data) {
+	// 		getData().then((data) => setData(data));
+	// 	}
+	// }, [data]);
 
 	const {
 		register,
@@ -76,6 +79,7 @@ export default function AddForm() {
 	} = useForm<Inputs>();
 
 	const [img, setImg] = useState("");
+	const [submitted, setSubmitted] = useState(false);
 
 	const onSubmit: SubmitHandler<Inputs> = async (entry: any) => {
 		if (entry.portrait) {
@@ -105,15 +109,18 @@ export default function AddForm() {
 			headers: {
 				"content-type": "application/json",
 			},
-		});
-		// window.location.reload();
+		}).then(() => setSubmitted(true));
 	};
 
-	if (!data)
+	if (submitted)
 		return (
-			<h1 className='m-auto text-[5rem] font-bold w-full text-center absolute top-1/3 '>
-				Loading...
-			</h1>
+			<Confirmation
+				onSubmit={() => {
+					console.log("clicked");
+					setSubmitted(false);
+					location.reload();
+				}}
+			/>
 		);
 	return (
 		<form
@@ -143,6 +150,9 @@ export default function AddForm() {
 				{...register("name", { required: true })}
 				className='px-5 py-3 border-2 border-slate-800/50 rounded-xl w-full'
 			/>
+			{errors.name && (
+				<span className='text-red-600'>Please enter your name.</span>
+			)}
 
 			<label className='pt-5'>Gender</label>
 			<select
@@ -177,6 +187,13 @@ export default function AddForm() {
 				}}
 			/>
 
+			<label className='pt-5'>Date of Birth</label>
+			<input
+				{...register("birthdate")}
+				type='date'
+				className='px-5 py-3 border-2 border-slate-800/50 rounded-xl w-full'
+			/>
+
 			<h1 className='text-5xl font-bold pt-10'>Family Info</h1>
 			<p className='bg-slate-100 p-5 rounded-3xl'>
 				Please try to use full names for the relatives that you enter. Please
@@ -204,13 +221,6 @@ export default function AddForm() {
 			<label className='pt-5'>Children (separate by space or comma)</label>
 			<input
 				{...register("children")}
-				className='px-5 py-3 border-2 border-slate-800/50 rounded-xl w-full'
-			/>
-
-			<label className='pt-5'>Date of Birth</label>
-			<input
-				{...register("birthdate")}
-				type='date'
 				className='px-5 py-3 border-2 border-slate-800/50 rounded-xl w-full'
 			/>
 

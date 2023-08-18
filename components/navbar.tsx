@@ -23,7 +23,7 @@ export default function NavBar() {
 						</Link>
 					</li>
 					<li>
-						<Link href='/add' className='hover:underline'>
+						<Link href='/addmemberform' className='hover:underline'>
 							Add Members
 						</Link>
 					</li>
