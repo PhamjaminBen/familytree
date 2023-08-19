@@ -89,7 +89,7 @@ export default function addTemplate(FamilyTree: any) {
 		'<image preserveAspectRatio="xMidYMid slice" clip-path="url(#ulaImg)" xlink:href="{val}" x="0" y="0" width="200" height="200">' +
 		"</image>";
 	FamilyTree.templates.myTemplate.field_0 =
-		'<text style="font-size: 24px;" fill="#000000" x="100" y="230" text-anchor="middle">{val}</text>';
+		'<text style="font-size: 18px;" fill="#000000" x="100" y="230" text-anchor="middle">{val}</text>';
 	// FamilyTree.templates.myTemplate.field_1 =
 	// '<text style="font-size: 16px;" fill="#ffffff" x="100" y="60" text-anchor="middle">{val}</text>';
 

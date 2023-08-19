@@ -91,6 +91,21 @@ const editElements = [
 		label: "Facebook",
 		binding: "facebook",
 	},
+	{
+		type: "textbox",
+		label: "mother",
+		binding: "mother",
+	},
+	{
+		type: "textbox",
+		label: "father",
+		binding: "father",
+	},
+	{
+		type: "textbox",
+		label: "children",
+		binding: "children",
+	},
 ];
 
 addTemplate(FamilyTree);
@@ -116,14 +131,16 @@ export default function HomePage() {
 				nodeBinding: {
 					field_0: "name",
 					// field_1: "bio",
-					img_0: "photo",
+					img_0: "portrait",
 				},
 				levelSeparation: 100,
+				subtreeSeparation: 200,
+				siblingSeparation: 200,
 				nodes: d,
 				nodeTreeMenu: true,
 				editForm: {
 					titleBinding: "name",
-					photoBinding: "photo",
+					photoBinding: "portrait",
 					elements: editElements,
 					addMore: undefined,
 					addMoreFieldName: undefined,

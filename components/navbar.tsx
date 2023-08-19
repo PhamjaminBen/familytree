@@ -13,6 +13,11 @@ export default function NavBar() {
 						</Link>
 					</li>
 					<li className='ml-auto'>
+						<Link href='/approvememberform' className='hover:underline'>
+							Approve Members
+						</Link>
+					</li>
+					<li>
 						<Link href='/' className='hover:underline'>
 							Home
 						</Link>

@@ -1,57 +1,35 @@
-import { writeFile } from "node:fs/promises";
-import { Collection, MongoClient } from "mongodb";
+import clientPromise from "@/lib/database";
 
 export async function GET() {
-	let database: null | Collection<Document> = null;
-
-	if (!process.env.MONGODB_URI) return JSON.stringify({ response: "no db" });
-
-	const client = new MongoClient(process.env.MONGODB_URI);
-	database = client.db("familytree").collection("treedata");
-	console.log("client open");
-
 	const retobj = [];
-	if (!database) return JSON.stringify({ response: "no db" });
-	const cursor = database?.find({}).project({ _id: 0 });
+	const client = await clientPromise;
+	const treeDB = client.db("data").collection("treeData");
+	const cursor = treeDB.find({}).project({ _id: 0 });
 
 	for await (let doc of cursor) {
 		retobj.push(doc);
 	}
-	client.close();
+
 	return new Response(JSON.stringify(retobj));
 }
 
 export async function DELETE(request: Request) {
-	let database: null | Collection<Document> = null;
-
-	if (!process.env.MONGODB_URI) return JSON.stringify({ response: "not ok" });
-
-	const client = new MongoClient(process.env.MONGODB_URI);
-	database = client.db("familytree").collection("treedata");
-	database.deleteMany({});
-	client.close();
+	console.log("deleting...");
+	const client = await clientPromise;
+	const treeDB = client.db("data").collection("treeData");
+	treeDB.deleteMany({});
 	return JSON.stringify({ response: "ok" });
 }
 
 export async function PATCH(request: Request) {
 	console.log("patching");
 	const data = await request.json();
+	const client = await clientPromise;
+	const treeDB = client.db("data").collection("treeData");
 
-	let database: null | Collection<Document> = null;
-
-	if (!process.env.MONGODB_URI) return JSON.stringify({ response: "not ok" });
-
-	const client = new MongoClient(process.env.MONGODB_URI);
-	database = client.db("familytree").collection("treedata");
-	// console.log("edit open", data);
-
-	if (!database) return JSON.stringify({ response: "no db" });
-	database.replaceOne({ id: data.person.id }, data.person, {
+	treeDB.replaceOne({ id: data.person.id }, data.person, {
 		upsert: true,
 	});
-	// console.log(cursor);
-
-	client.close();
 
 	return JSON.stringify({ response: "ok" });
 }
@@ -60,17 +38,11 @@ export async function POST(request: Request) {
 	console.log("posting");
 	const data = await request.json();
 	const person = data.person;
+	const client = await clientPromise;
+	const formDB = client.db("data").collection("formData");
+	person.approved = false;
 
-	let database: null | Collection<Document> = null;
-
-	if (!process.env.MONGODB_URI) return JSON.stringify({ response: "ERROR" });
-
-	const client = new MongoClient(process.env.MONGODB_URI);
-	database = client.db("familytree").collection("formData");
-
-	const cursor = await database.insertOne(data.person);
+	const cursor = await formDB.insertOne(person);
 	console.log("inserted id: ", cursor.insertedId);
-
-	client.close();
 	return JSON.stringify({ response: "ok" });
 }
