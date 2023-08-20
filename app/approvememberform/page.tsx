@@ -261,7 +261,7 @@ export default function AddMemberForm() {
 					)}
 					<input
 						defaultValue={currData.portrait}
-						{...register("portrait", { required: true })}
+						{...register("portrait")}
 						className='px-5 py-3 border-2 border-slate-800/50 rounded-xl w-full'
 					/>
 					<label className='pt-5'>Date of Birth</label>
