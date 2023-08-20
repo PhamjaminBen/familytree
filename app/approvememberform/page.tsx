@@ -136,7 +136,7 @@ export default function AddMemberForm() {
 
 	const onSubmit: SubmitHandler<Inputs> = async (entry: any) => {
 		currData.approved = true;
-		// entry.approved = true;
+		entry.approved = true;
 		fetch("/approvememberform/api", {
 			method: "PATCH",
 			body: JSON.stringify({
