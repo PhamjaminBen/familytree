@@ -67,6 +67,35 @@
 // }
 
 export default function addTemplate(FamilyTree: any) {
+	FamilyTree.elements.myTextArea = function (
+		data: any,
+		editElement: any,
+		minWidth: any,
+		readOnly: any
+	) {
+		var id = FamilyTree.elements.generateId();
+		var value = data[editElement.binding];
+		if (value == undefined) value = "";
+		if (readOnly && !value) {
+			return {
+				html: "",
+			};
+		}
+		var rOnlyAttr = readOnly ? "readonly" : "";
+		var rDisabledAttr = readOnly ? "disabled" : "";
+		return {
+			html: `
+            <textarea ${rDisabledAttr} ${rOnlyAttr} id="${id}" name="${id}" \
+            style="width: 100%;\
+            height: 200px;\
+            background-color: white;\
+            padding-left: 15px;\
+            data-binding="${editElement.binding}">${value}</textarea>`,
+			id: id,
+			value: value,
+		};
+	};
+
 	FamilyTree.templates.myTemplate = Object.assign(
 		{},
 		FamilyTree.templates.tommy

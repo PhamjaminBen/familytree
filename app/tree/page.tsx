@@ -37,6 +37,11 @@ var nodeBinding = {
 
 const editElements = [
 	{
+		type: "myTextArea",
+		label: "Bio",
+		binding: "bio",
+	},
+	{
 		type: "textbox",
 		label: "Full Name",
 		binding: "name",
@@ -65,11 +70,6 @@ const editElements = [
 		type: "textbox",
 		label: "Hobbies",
 		binding: "hobbies",
-	},
-	{
-		type: "textbox",
-		label: "Biography",
-		binding: "biography",
 	},
 	{
 		type: "textbox",
