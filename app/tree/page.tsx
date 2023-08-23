@@ -150,6 +150,12 @@ export default function HomePage() {
 					buttons: {
 						pdf: null,
 						share: null,
+						edit: {
+							icon: FamilyTree.icon.edit(45, 24, "#fff"),
+							text: "Edit",
+							hideIfEditMode: true,
+							hideIfDetailsMode: false,
+						},
 					},
 				},
 				miniMap: true,
