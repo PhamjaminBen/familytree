@@ -189,7 +189,7 @@ export default function HomePage() {
 	}, []);
 	return (
 		<>
-			<div id='tree' className='h-[90vh] w-[100vh]'></div>
+			<div id='tree' className='h-[90vh] w-[100vw]'></div>
 			{loading && (
 				<h1 className='m-auto text-[5rem] font-bold w-full text-center absolute top-1/3 '>
 					Loading...
