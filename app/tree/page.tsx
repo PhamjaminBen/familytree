@@ -136,6 +136,8 @@ export default function HomePage() {
 				levelSeparation: 100,
 				subtreeSeparation: 200,
 				siblingSeparation: 200,
+				showYScroll: FamilyTree.scroll.visible,
+				showXScroll: FamilyTree.scroll.visible,
 				nodes: d,
 				nodeTreeMenu: true,
 				editForm: {
@@ -165,24 +167,29 @@ export default function HomePage() {
 						break;
 					}
 				}
-				for (var t = 0; t < tree.config.nodes.length; t++) {
-					fetch("api", {
-						method: "PATCH",
-						body: JSON.stringify({
-							person: tree.config.nodes[t],
-						}),
-						headers: {
-							"content-type": "application/json",
-						},
-					});
-				}
+				fetch("api", { method: "DELETE", body: JSON.stringify({}) }).then(
+					() => {
+						if (!tree.config.nodes) return tree;
+						for (var t = 0; t < tree.config.nodes.length; t++) {
+							fetch("api", {
+								method: "PATCH",
+								body: JSON.stringify({
+									person: tree.config.nodes[t],
+								}),
+								headers: {
+									"content-type": "application/json",
+								},
+							});
+						}
+					}
+				);
 				return tree;
 			};
 		});
 	}, []);
 	return (
 		<>
-			<div id='tree' className='h-[90vh]'></div>
+			<div id='tree' className='h-[90vh] w-[100vh]'></div>
 			{loading && (
 				<h1 className='m-auto text-[5rem] font-bold w-full text-center absolute top-1/3 '>
 					Loading...
