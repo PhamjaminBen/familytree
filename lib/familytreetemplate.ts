@@ -83,14 +83,39 @@ export default function addTemplate(FamilyTree: any) {
 		}
 		var rOnlyAttr = readOnly ? "readonly" : "";
 		var rDisabledAttr = readOnly ? "disabled" : "";
+		let html: string;
+		if (readOnly) {
+			html = `<div style="line-height: 20px;
+      padding: 0 14px;
+      font-size: 14px;
+      color: #757575;
+      padding: 14px;
+      ">
+      <span style="color: #acacac">Bio</span><br /> ${value}</div>`;
+		} else {
+			html = `<label for="${id}" style="padding-left: 15px;color: #acacac ">${editElement.label}</label>\
+      <textarea ${rDisabledAttr} ${rOnlyAttr} id="${id}" name="${id}" 
+      oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+      style="width: 100%;
+      height: 200px;
+      background-color: white;
+      margin-left: 4px;
+      margin-right: 4px;
+      padding-left: 9px;
+      padding-top: 14px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #c7c7c7;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #757575;
+      line-height: 20px;
+      
+      data-binding="${editElement.binding}">${value}</textarea>`;
+		}
+
 		return {
-			html: `
-            <textarea ${rDisabledAttr} ${rOnlyAttr} id="${id}" name="${id}" \
-            style="width: 100%;\
-            height: 200px;\
-            background-color: white;\
-            padding-left: 15px;\
-            data-binding="${editElement.binding}">${value}</textarea>`,
+			html: html,
 			id: id,
 			value: value,
 		};

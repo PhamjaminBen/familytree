@@ -127,6 +127,7 @@ export default function HomePage() {
 		getData().then((d) => {
 			console.log(d);
 			tree = new FamilyTree(document.getElementById("tree") as any, {
+				padding: 100,
 				template: "myTemplate",
 				nodeBinding: {
 					field_0: "name",
