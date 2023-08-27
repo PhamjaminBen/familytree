@@ -80,6 +80,8 @@ export default function AddMemberForm() {
 
 	const [img, setImg] = useState("");
 	const [submitted, setSubmitted] = useState(false);
+	const [password, setPassword] = useState("");
+	const [approved, setApproved] = useState(false);
 
 	const onSubmit: SubmitHandler<Inputs> = async (entry: any) => {
 		if (entry.portrait) {
@@ -112,6 +114,38 @@ export default function AddMemberForm() {
 		}).then(() => setSubmitted(true));
 	};
 
+	if (!approved)
+		return (
+			<div className='h-full w-full flex flex-col justify-center items-center'>
+				<h1 className='text-center text-5xl font-bold absolute top-[40vh]'>
+					Enter Password
+				</h1>
+				<form
+					onSubmit={(e) => {
+						e.preventDefault();
+						if (password === "phamclan1977!") {
+							setApproved(true);
+						} else {
+							alert("Wrong password");
+						}
+					}}
+					className={` text-slate-800 absolute top-[50vh]`}
+				>
+					<input
+						autoFocus={true}
+						type='password'
+						className='bg-slate-100 py-3 px-5  text-lg rounded-xl '
+						content={password}
+						onChange={(e) => setPassword(e.target.value)}
+					></input>
+					<input
+						type='submit'
+						className='bg-slate-800 text-white font-bold p-3 ml-5 rounded-xl'
+					/>
+				</form>
+			</div>
+		);
+
 	if (submitted)
 		return (
 			<Confirmation
@@ -122,6 +156,7 @@ export default function AddMemberForm() {
 				}}
 			/>
 		);
+
 	return (
 		<form
 			className='px-5 py-10 max-w-full md:w-2/5 m-auto flex flex-col space-y-3'
