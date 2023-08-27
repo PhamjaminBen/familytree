@@ -179,7 +179,10 @@ export default function AddMemberForm() {
 			</p>
 
 			<h1 className='text-5xl font-bold pb-10'>Personal Info</h1>
-			<label>Full Name</label>
+			<div className='flex flex-row'>
+				<label>Full Name </label>
+				<p className='text-red-500'>*</p>
+			</div>
 			<input
 				placeholder='Full Name'
 				{...register("name", { required: true })}
@@ -197,6 +200,7 @@ export default function AddMemberForm() {
 				<option value='female'>female</option>
 				<option value='male'>male</option>
 				<option value='other'>other</option>
+				<option value='other'>Would not like to specify</option>
 			</select>
 
 			<label className='pt-5'>Image of self</label>
