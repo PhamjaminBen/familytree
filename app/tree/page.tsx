@@ -137,7 +137,6 @@ export default function Tree() {
 				template: "myTemplate",
 				nodeBinding: {
 					field_0: "name",
-					// field_1: "bio",
 					img_0: "portrait",
 				},
 				levelSeparation: 100,
@@ -146,6 +145,8 @@ export default function Tree() {
 
 				nodes: d,
 				editForm: {
+					titleBinding: "name",
+					photoBinding: "portrait",
 					elements: editElements,
 					readOnly: true,
 				},

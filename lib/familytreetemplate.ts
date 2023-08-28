@@ -1,71 +1,3 @@
-// import FamilyTree from "@balkangraph/familytree.js";
-
-// export default function addTemplate(FamilyTree: any) {
-// 	FamilyTree.templates.john = Object.assign({}, FamilyTree.templates.base);
-// 	FamilyTree.templates.john.defs = `<style>
-//     .{randId} .bft-edit-form-header, .{randId} .bft-img-button{
-//         background-color: #aeaeae;
-//     }
-//     .{randId}.male .bft-edit-form-header, .{randId}.male .bft-img-button{
-//         background-color: #039BE5;
-//     }
-//     .{randId}.male div.bft-img-button:hover{
-//         background-color: #F57C00;
-//     }
-//     .{randId}.female .bft-edit-form-header, .{randId}.female .bft-img-button{
-//         background-color: #F57C00;
-//     }
-//     .{randId}.female div.bft-img-button:hover{
-//         background-color: #039BE5;
-//     }
-// </style>
-// <clipPath id="john_img_0">
-// <rect x="6" y="6" rx="54" ry="54" width="108" height="108" fill="#aeaeae"></rect>
-// </clipPath>
-//   ${FamilyTree.gradientCircleForDefs("circle", "#aeaeae", 60, 5)}
-//   ${FamilyTree.gradientCircleForDefs("male_circle", "#039BE5", 60, 5)}
-//   ${FamilyTree.gradientCircleForDefs("female_circle", "#F57C00", 60, 5)}`;
-// 	FamilyTree.templates.john.field_0 =
-// 		"<text " +
-// 		FamilyTree.attr.width +
-// 		' ="230" style="font-size: 16px;font-weight:bold;" fill="#aeaeae" x="60" y="135" text-anchor="middle">{val}</text>';
-// 	FamilyTree.templates.john.field_1 =
-// 		"<text " +
-// 		FamilyTree.attr.width +
-// 		' ="150" style="font-size: 13px;" fill="#aeaeae" x="60" y="150" text-anchor="middle">{val}</text>';
-// 	FamilyTree.templates.john.node =
-// 		'<use x="0" y="0" fill="#4D4D4D" xlink:href="#circle" />';
-// 	FamilyTree.templates.john.img_0 =
-// 		'<image preserveAspectRatio="xMidYMid slice" clip-path="url(#john_img_0)" xlink:href="{val}" x="6" y="6" width="108" height="108"></image>';
-// 	FamilyTree.templates.john.ripple = {
-// 		radius: 60,
-// 		color: "#e6e6e6",
-// 		rect: undefined,
-// 	};
-
-// 	FamilyTree.templates.john.size = [120, 120];
-// 	FamilyTree.templates.john_male = Object.assign({}, FamilyTree.templates.john);
-// 	FamilyTree.templates.john_male.node +=
-// 		'<use x="0" y="0" xlink:href="#male_circle" />';
-// 	FamilyTree.templates.john_male.ripple = {
-// 		radius: 60,
-// 		color: "#039BE5",
-// 		rect: undefined,
-// 	};
-// 	FamilyTree.templates.john_female = Object.assign(
-// 		{},
-// 		FamilyTree.templates.john
-// 	);
-// 	FamilyTree.templates.john_female.node +=
-// 		'<use x="0" y="0" xlink:href="#female_circle" />';
-// 	FamilyTree.templates.john_female.ripple = {
-// 		radius: 60,
-// 		color: "#F57C00",
-// 		rect: undefined,
-// 	};
-// 	FamilyTree.templates.john.nodeMenuButton = `<use ${FamilyTree.attr.control_node_menu_id}="{id}" x="90" y="50" xlink:href="#base_node_menu" />`;
-// }
-
 export default function addTemplate(FamilyTree: any) {
 	FamilyTree.elements.myTextArea = function (
 		data: any,
@@ -81,13 +13,38 @@ export default function addTemplate(FamilyTree: any) {
 				html: "",
 			};
 		}
+		var rOnlyAttr = readOnly ? "readonly" : "";
+		var rDisabledAttr = readOnly ? "disabled" : "";
 		let html: string;
-		html = `<div style="line-height: 20px;
+		if (readOnly) {
+			html = `<div style="line-height: 20px;
       padding: 0 14px;
       font-size: 14px;
       color: #757575;
+      padding: 14px;
       ">
       <span style="color: #acacac">Bio</span><br /> ${value}</div>`;
+		} else {
+			html = `<label for="${id}" style="padding-left: 15px;color: #acacac ">${editElement.label}</label>\
+      <textarea ${rDisabledAttr} ${rOnlyAttr} id="${id}" name="${id}" 
+      oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+      style="width: 100%;
+      height: 200px;
+      background-color: white;
+      margin-left: 4px;
+      margin-right: 4px;
+      padding-left: 9px;
+      padding-top: 14px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #c7c7c7;
+      border-radius: 5px;
+      font-size: 16px;
+      color: #757575;
+      line-height: 20px;
+      
+      data-binding="${editElement.binding}">${value}</textarea>`;
+		}
 
 		return {
 			html: html,
@@ -119,7 +76,7 @@ export default function addTemplate(FamilyTree: any) {
   </linearGradient>
   <g id="hugo_up">
   <circle cx="12" cy="12" r="15" fill="transparent"></circle>
-    ${FamilyTree.icon.ft(24, 24, "#000", 0, 0)}
+    ${FamilyTree.icon.ft(24, 24, "#fff", 0, 0)}
   </g>
   <g id="hugo_node_menu" style="cursor:pointer;">
       <rect x="0" y="0" fill="transparent" width="22" height="22"></rect>
