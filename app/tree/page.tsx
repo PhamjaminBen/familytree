@@ -186,7 +186,6 @@ export default function Tree() {
 	}, []);
 	return (
 		<div className='flex flex-col items-center bg-white h-[87vh]'>
-		<div className='flex flex-col items-center bg-white h-[87vh]'>
 			{loading ? (
 				<h1 className='m-auto text-[5rem] font-bold w-full text-center absolute top-1/3 '>
 					Loading...
