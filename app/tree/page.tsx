@@ -143,8 +143,10 @@ export default function Tree() {
 				levelSeparation: 100,
 				subtreeSeparation: 200,
 				siblingSeparation: 200,
+
 				nodes: d,
 				editForm: {
+					elements: editElements,
 					readOnly: true,
 				},
 				miniMap: false,
