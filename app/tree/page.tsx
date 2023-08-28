@@ -157,7 +157,7 @@ export default function Tree() {
 						edit: null,
 					},
 				},
-				miniMap: true,
+				miniMap: false,
 			});
 
 			tree.update = function (e: any) {
