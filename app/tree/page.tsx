@@ -158,6 +158,8 @@ export default function Tree() {
 					},
 				},
 				miniMap: false,
+				searchFields: ["name"],
+				scaleInitial: 0.75,
 			});
 
 			tree.update = function (e: any) {
@@ -193,16 +195,13 @@ export default function Tree() {
 		});
 	}, []);
 	return (
-		<div className='flex flex-col items-center bg-white h-[92.5vh]'>
+		<div className='flex flex-col items-center bg-white h-[87vh]'>
 			{loading ? (
 				<h1 className='m-auto text-[5rem] font-bold w-full text-center absolute top-1/3 '>
 					Loading...
 				</h1>
 			) : (
-				<div className='bg-slate-100 p-5 rounded-xl self-start absolute top-[12vh] z-20 space-y-10 mx-5'>
-					{/* <h1 className='m-auto text-4xl sm:text-6xl md:text-7xl font-bold w-full text-left underline underline-offset-auto'>
-						Pham Family Tree
-					</h1> */}
+				<div className='bg-slate-100 opacity-0 sm:opacity-100 p-5 rounded-xl self-start absolute top-0 sm:top-[12vh] z-20 space-y-10 mx-5'>
 					<h1 className='m-auto sm:text-lg font-semibold w-full text-left'>
 						Want to add yourself to the tree?{" "}
 						<Link
@@ -216,7 +215,7 @@ export default function Tree() {
 			)}
 			<div
 				id='tree'
-				className='h-[80vh] mt-24 sm:mt-0 sm:h-[95vh] w-[98vw] rounded-xl mb-10 '
+				className='h-[85vh] sm:h-[95vh] w-[98vw] rounded-xl mb-10 '
 			></div>
 		</div>
 	);
