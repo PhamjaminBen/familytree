@@ -1,7 +1,9 @@
 "use client";
 
 import addTemplate, { testData } from "@/lib/familytreetemplate";
+import { store } from "@/lib/store";
 import FamilyTree from "@balkangraph/familytree.js";
+import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface TreeProps {
@@ -110,7 +112,10 @@ const editElements = [
 
 addTemplate(FamilyTree);
 
-export default function HomePage() {
+export default function Tree() {
+	if (!store.getState().user.verified) {
+		redirect("/login");
+	}
 	// // 	const [data, setData] = useState<familyTreeData | null>(null);
 	// console.log(familyTreeData);
 	const [loading, setLoading] = useState<Boolean>(true);

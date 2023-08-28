@@ -12,12 +12,7 @@ export default function NavBar() {
 							The Phams - 1977 and Soaring
 						</Link>
 					</li>
-					<li className='ml-auto'>
-						<Link href='/approvememberform' className='hover:underline'>
-							Approve Members
-						</Link>
-					</li>
-					<li>
+					<li className=' ml-auto'>
 						<Link href='/' className='hover:underline'>
 							Home
 						</Link>

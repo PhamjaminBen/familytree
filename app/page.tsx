@@ -1,4 +1,11 @@
-export default async function home() {
+"use client";
+import { store } from "@/lib/store";
+import { redirect } from "next/navigation";
+
+export default async function Home() {
+	if (!store.getState().user.verified) {
+		redirect("/login");
+	}
 	return (
 		<div className='flex flex-col gap-y-2 items-center text-center w-full px-36 py-10'>
 			<p>
