@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 export default function Login() {
 	const verified = store.getState().user.verified;
 	const [password, setPassword] = useState("");
+	const [errorMessage, setErrorMessage] = useState("");
 	const router = useRouter();
 
 	if (verified) {
@@ -17,6 +18,11 @@ export default function Login() {
 
 	return (
 		<div className='h-full w-full flex flex-col justify-center items-center'>
+			<p className='text-center text-xl font-bold absolute top-[15vh] max-w-5xl px-10'>
+				<b>Welcome to the Pham family website!</b> To ensure privacy, please use
+				the password to access the website. If you don&apos;t know the password,
+				please ask whoever gave you the website link to provide it to you.
+			</p>
 			<h1 className='text-center text-5xl font-bold absolute top-[40vh]'>
 				Enter Password
 			</h1>
@@ -29,7 +35,7 @@ export default function Login() {
 						console.log(store.getState().user.verified);
 						router.push("/");
 					} else {
-						alert("Wrong password");
+						setErrorMessage("Wrong Password.");
 					}
 				}}
 				className={` text-slate-800 absolute top-[50vh]`}
@@ -43,8 +49,13 @@ export default function Login() {
 				></input>
 				<input
 					type='submit'
-					className='bg-slate-800 text-white font-bold p-3 ml-5 rounded-xl'
+					className='bg-slate-800 text-white font-bold p-3 ml-5 rounded-xl hover:bg-indigo-700 focus:p-2'
 				/>
+				{errorMessage && (
+					<p className='text-red-500 mt-5 font-semibold text center'>
+						{errorMessage}
+					</p>
+				)}
 			</form>
 		</div>
 	);

@@ -3,6 +3,7 @@
 import addTemplate, { testData } from "@/lib/familytreetemplate";
 import { store } from "@/lib/store";
 import FamilyTree from "@balkangraph/familytree.js";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -142,10 +143,7 @@ export default function Tree() {
 				levelSeparation: 100,
 				subtreeSeparation: 200,
 				siblingSeparation: 200,
-				showYScroll: FamilyTree.scroll.visible,
-				showXScroll: FamilyTree.scroll.visible,
 				nodes: d,
-				nodeTreeMenu: true,
 				editForm: {
 					titleBinding: "name",
 					photoBinding: "portrait",
@@ -156,12 +154,7 @@ export default function Tree() {
 					buttons: {
 						pdf: null,
 						share: null,
-						edit: {
-							icon: FamilyTree.icon.edit(45, 24, "#fff"),
-							text: "Edit",
-							hideIfEditMode: true,
-							hideIfDetailsMode: false,
-						},
+						edit: null,
 					},
 				},
 				miniMap: true,
@@ -200,13 +193,28 @@ export default function Tree() {
 		});
 	}, []);
 	return (
-		<>
-			<div id='tree' className='h-[90vh] w-[100vw]'></div>
-			{loading && (
+		<div className='flex flex-col items-center bg-white h-[92.5vh]'>
+			{loading ? (
 				<h1 className='m-auto text-[5rem] font-bold w-full text-center absolute top-1/3 '>
 					Loading...
 				</h1>
+			) : (
+				<div className='bg-slate-100 p-5 rounded-xl self-start absolute top-[12vh] z-20 space-y-10 mx-5'>
+					{/* <h1 className='m-auto text-4xl sm:text-6xl md:text-7xl font-bold w-full text-left underline underline-offset-auto'>
+						Pham Family Tree
+					</h1> */}
+					<h1 className='m-auto text-lg font-semibold w-full text-left'>
+						Want to add yourself to the tree?{" "}
+						<Link
+							href='/addmemberform'
+							className='text-blue-500 hover:underline hover:text-indigo-600'
+						>
+							Click here to submit a form.
+						</Link>
+					</h1>
+				</div>
 			)}
-		</>
+			<div id='tree' className='h-[95vh] w-[98vw] rounded-xl mb-10 '></div>
+		</div>
 	);
 }
