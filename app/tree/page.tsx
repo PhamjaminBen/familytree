@@ -216,7 +216,7 @@ export default function Tree() {
 			)}
 			<div
 				id='tree'
-				className='h-[90vh] mt-10 sm:mt-0 sm:h-[95vh] w-[98vw] rounded-xl mb-10 '
+				className='h-[80vh] mt-24 sm:mt-0 sm:h-[95vh] w-[98vw] rounded-xl mb-10 '
 			></div>
 		</div>
 	);
