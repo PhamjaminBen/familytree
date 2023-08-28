@@ -119,7 +119,7 @@ export default function addTemplate(FamilyTree: any) {
   </linearGradient>
   <g id="hugo_up">
   <circle cx="12" cy="12" r="15" fill="transparent"></circle>
-    ${FamilyTree.icon.ft(24, 24, "#fff", 0, 0)}
+    ${FamilyTree.icon.ft(24, 24, "#000", 0, 0)}
   </g>
   <g id="hugo_node_menu" style="cursor:pointer;">
       <rect x="0" y="0" fill="transparent" width="22" height="22"></rect>
@@ -180,12 +180,12 @@ export default function addTemplate(FamilyTree: any) {
 	// 	'<line x1="14" y1="0" x2="14" y2="10" stroke-width="2" stroke="rgb(255, 202, 40)" />' +
 	// 	"</g>";
 
-	FamilyTree.templates.myTemplate.menuButton =
-		'<div style="position:absolute;right:{p}px;top:{p}px; width:40px;height:50px;cursor:pointer;" data-ctrl-menu="">' +
-		'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
-		'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
-		'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
-		"</div>";
+	// FamilyTree.templates.myTemplate.menuButton =
+	// 	'<div style="position:absolute;right:{p}px;top:{p}px; width:40px;height:50px;cursor:pointer;" data-ctrl-menu="">' +
+	// 	'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
+	// 	'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
+	// 	'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
+	// 	"</div>";
 
 	FamilyTree.templates.myTemplate.pointer =
 		'<g data-pointer="pointer" transform="matrix(0,0,0,0,100,100)">><g transform="matrix(0.3,0,0,0.3,-17,-17)">' +
