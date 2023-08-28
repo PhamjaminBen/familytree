@@ -203,7 +203,7 @@ export default function Tree() {
 					{/* <h1 className='m-auto text-4xl sm:text-6xl md:text-7xl font-bold w-full text-left underline underline-offset-auto'>
 						Pham Family Tree
 					</h1> */}
-					<h1 className='m-auto text-lg font-semibold w-full text-left'>
+					<h1 className='m-auto sm:text-lg font-semibold w-full text-left'>
 						Want to add yourself to the tree?{" "}
 						<Link
 							href='/addmemberform'
@@ -214,7 +214,10 @@ export default function Tree() {
 					</h1>
 				</div>
 			)}
-			<div id='tree' className='h-[95vh] w-[98vw] rounded-xl mb-10 '></div>
+			<div
+				id='tree'
+				className='h-[90vh] mt-10 sm:mt-0 sm:h-[95vh] w-[98vw] rounded-xl mb-10 '
+			></div>
 		</div>
 	);
 }
