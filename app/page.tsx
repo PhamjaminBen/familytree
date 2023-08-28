@@ -15,8 +15,8 @@ export default function Home() {
 			</h1>
 			<p className='text-2xl'>
 				<b>Welcome!</b> This is a website dedicated to the history and ancestry
-				Pham family, who first came to the United States in 1977. Currently a
-				Work in Progess, stay tuned🫡
+				of the Pham family, who first came to the United States in 1977.
+				Currently a Work in Progess, stay tuned🫡
 			</p>
 			{/* <Image
 				src='/Pham.jpg'
