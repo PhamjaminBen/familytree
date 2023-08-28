@@ -86,7 +86,6 @@ export default function addTemplate(FamilyTree: any) {
       padding: 0 14px;
       font-size: 14px;
       color: #757575;
-      padding: 14px;
       ">
       <span style="color: #acacac">Bio</span><br /> ${value}</div>`;
 
@@ -181,12 +180,12 @@ export default function addTemplate(FamilyTree: any) {
 	// 	'<line x1="14" y1="0" x2="14" y2="10" stroke-width="2" stroke="rgb(255, 202, 40)" />' +
 	// 	"</g>";
 
-	// FamilyTree.templates.myTemplate.menuButton =
-	// 	'<div style="position:absolute;right:{p}px;top:{p}px; width:40px;height:50px;cursor:pointer;" data-ctrl-menu="">' +
-	// 	'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
-	// 	'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
-	// 	'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
-	// 	"</div>";
+	FamilyTree.templates.myTemplate.menuButton =
+		'<div style="position:absolute;right:{p}px;top:{p}px; width:40px;height:50px;cursor:pointer;" data-ctrl-menu="">' +
+		'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
+		'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
+		'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
+		"</div>";
 
 	FamilyTree.templates.myTemplate.pointer =
 		'<g data-pointer="pointer" transform="matrix(0,0,0,0,100,100)">><g transform="matrix(0.3,0,0,0.3,-17,-17)">' +
@@ -210,49 +209,3 @@ export default function addTemplate(FamilyTree: any) {
 	FamilyTree.templates.myTemplate_female.node =
 		'<circle cx="100" cy="100" r="100" fill="#FF46A3" stroke-width="1" stroke="#aeaeae"></circle>';
 }
-
-export const testData = [
-	{
-		id: 1,
-		pids: [2],
-		name: "Amber McKenzie",
-		gender: "female",
-		phone: "+7(863)354-67-14",
-		photo: "https://cdn.balkan.app/shared/w60/3.jpg",
-	},
-	{
-		id: 2,
-		pids: [1],
-		name: "Ava Field",
-		gender: "male",
-		phone: "+7(3952)67-30-48",
-		photo: "https://cdn.balkan.app/shared/m60/3.jpg",
-	},
-	{
-		id: 3,
-		mid: 1,
-		fid: 2,
-		name: "Peter Stevens",
-		gender: "male",
-		phone: "+7(4932)86-83-67",
-		photo: "https://cdn.balkan.app/shared/m30/1.jpg",
-	},
-	{
-		id: 4,
-		mid: 1,
-		fid: 2,
-		name: "Savin Stevens",
-		gender: "male",
-		phone: "+7(351)121-01-17",
-		photo: "https://cdn.balkan.app/shared/m30/2.jpg",
-	},
-	{
-		id: 5,
-		mid: 1,
-		fid: 2,
-		name: "Emma Stevens",
-		gender: "female",
-		phone: "+7(8652)97-73-24",
-		photo: "https://cdn.balkan.app/shared/w30/5.jpg",
-	},
-];

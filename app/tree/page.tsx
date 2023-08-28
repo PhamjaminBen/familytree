@@ -1,6 +1,6 @@
 "use client";
 
-import addTemplate, { testData } from "@/lib/familytreetemplate";
+import addTemplate from "@/lib/familytreetemplate";
 import { store } from "@/lib/store";
 import FamilyTree from "@balkangraph/familytree.js";
 import Link from "next/link";
@@ -145,19 +145,10 @@ export default function Tree() {
 				siblingSeparation: 200,
 				nodes: d,
 				editForm: {
-					titleBinding: "name",
-					photoBinding: "portrait",
-					elements: editElements,
-					addMore: undefined,
-					addMoreFieldName: undefined,
-					addMoreBtn: undefined,
-					buttons: {
-						pdf: null,
-						share: null,
-						edit: null,
-					},
+					readOnly: true,
 				},
 				miniMap: true,
+				searchFields: ["name"],
 			});
 
 			tree.update = function (e: any) {
