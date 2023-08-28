@@ -86,7 +86,6 @@ export default function addTemplate(FamilyTree: any) {
       padding: 0 14px;
       font-size: 14px;
       color: #757575;
-      padding: 14px;
       ">
       <span style="color: #acacac">Bio</span><br /> ${value}</div>`;
 
@@ -120,7 +119,7 @@ export default function addTemplate(FamilyTree: any) {
   </linearGradient>
   <g id="hugo_up">
   <circle cx="12" cy="12" r="15" fill="transparent"></circle>
-    ${FamilyTree.icon.ft(24, 24, "#fff", 0, 0)}
+    ${FamilyTree.icon.ft(24, 24, "#000", 0, 0)}
   </g>
   <g id="hugo_node_menu" style="cursor:pointer;">
       <rect x="0" y="0" fill="transparent" width="22" height="22"></rect>
@@ -210,49 +209,3 @@ export default function addTemplate(FamilyTree: any) {
 	FamilyTree.templates.myTemplate_female.node =
 		'<circle cx="100" cy="100" r="100" fill="#FF46A3" stroke-width="1" stroke="#aeaeae"></circle>';
 }
-
-export const testData = [
-	{
-		id: 1,
-		pids: [2],
-		name: "Amber McKenzie",
-		gender: "female",
-		phone: "+7(863)354-67-14",
-		photo: "https://cdn.balkan.app/shared/w60/3.jpg",
-	},
-	{
-		id: 2,
-		pids: [1],
-		name: "Ava Field",
-		gender: "male",
-		phone: "+7(3952)67-30-48",
-		photo: "https://cdn.balkan.app/shared/m60/3.jpg",
-	},
-	{
-		id: 3,
-		mid: 1,
-		fid: 2,
-		name: "Peter Stevens",
-		gender: "male",
-		phone: "+7(4932)86-83-67",
-		photo: "https://cdn.balkan.app/shared/m30/1.jpg",
-	},
-	{
-		id: 4,
-		mid: 1,
-		fid: 2,
-		name: "Savin Stevens",
-		gender: "male",
-		phone: "+7(351)121-01-17",
-		photo: "https://cdn.balkan.app/shared/m30/2.jpg",
-	},
-	{
-		id: 5,
-		mid: 1,
-		fid: 2,
-		name: "Emma Stevens",
-		gender: "female",
-		phone: "+7(8652)97-73-24",
-		photo: "https://cdn.balkan.app/shared/w30/5.jpg",
-	},
-];
