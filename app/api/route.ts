@@ -4,7 +4,9 @@ export async function GET() {
 	const retobj = [];
 	const client = await clientPromise;
 	const treeDB = client.db("data").collection("treeData");
-	const cursor = treeDB.find({}).project({ _id: 0 });
+	const cursor = treeDB
+		.find({})
+		.project({ _id: 0, partner: 0, children: 0, mother: 0, father: 0 });
 
 	for await (let doc of cursor) {
 		retobj.push(doc);

@@ -50,16 +50,6 @@ const editElements = [
 		binding: "name",
 	},
 	{
-		type: "select",
-		options: [
-			{ value: "male", text: "male" },
-			{ value: "female", text: "female" },
-			{ value: "other", text: "other" },
-		],
-		label: "gender",
-		binding: "gender",
-	},
-	{
 		type: "date",
 		label: "Date of Birth",
 		binding: "birthdate",
@@ -149,42 +139,41 @@ export default function Tree() {
 					photoBinding: "portrait",
 					elements: editElements,
 					readOnly: true,
+					buttons: {
+						back: {
+							icon: `<svg 
+              fill="#ffffff" 
+              height="25px" 
+              width="47px" 
+              version="1.1" 
+              id="Layer_1" 
+              mlns="http://www.w3.org/2000/svg" 
+              xmlns:xlink="http://www.w3.org/1999/xlink" 
+              viewBox="-38.1 -38.1 552.41 552.41" 
+              xml:space="preserve" 
+              stroke="#ffffff" 
+              stroke-width="60" 
+              transform="rotate(0)">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.952426"></g>
+              <g id="SVGRepo_iconCarrier"> <polygon points="476.213,223.107 57.427,223.107 151.82,128.713 130.607,107.5 0,238.106 130.607,368.714 151.82,347.5 57.427,253.107 476.213,253.107 "></polygon> 
+              </g>
+              </svg>`,
+							text: "back",
+						},
+						share: null,
+						pdf: null,
+						remove: null,
+					},
 				},
 				miniMap: false,
 				searchFields: ["name"],
 				scaleInitial: 0.75,
 			});
 
-			tree.update = function (e: any) {
-				if (tree.config.nodes === undefined) return tree;
-
-				console.log("tree", tree.config.nodes);
-				let nodes: Array<any>;
-				nodes = tree.config.nodes;
-				for (var t = 0; t < tree.config.nodes.length; t++) {
-					if (nodes[t].id == e.id) {
-						tree.config.nodes[t] = e;
-						break;
-					}
-				}
-				fetch("api", { method: "DELETE", body: JSON.stringify({}) }).then(
-					() => {
-						if (!tree.config.nodes) return tree;
-						for (var t = 0; t < tree.config.nodes.length; t++) {
-							fetch("api", {
-								method: "PATCH",
-								body: JSON.stringify({
-									person: tree.config.nodes[t],
-								}),
-								headers: {
-									"content-type": "application/json",
-								},
-							});
-						}
-					}
-				);
-				return tree;
-			};
+			tree.editUI.on("button-click", (sender, args) => {
+				sender.hide();
+			});
 		});
 	}, []);
 	return (
