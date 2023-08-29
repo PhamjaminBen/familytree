@@ -16,40 +16,28 @@ export default function addTemplate(FamilyTree: any) {
 		var rOnlyAttr = readOnly ? "readonly" : "";
 		var rDisabledAttr = readOnly ? "disabled" : "";
 		let html: string;
-		if (readOnly) {
-			html = `<div style="line-height: 20px;
+		html = `<div style="line-height: 20px;
       padding: 0 14px;
-      font-size: 14px;
+      font-size: 15px;
       color: #757575;
       padding: 14px;
       ">
       <span style="color: #acacac">Bio</span><br /> ${value}</div>`;
-		} else {
-			html = `<label for="${id}" style="padding-left: 15px;color: #acacac ">${editElement.label}</label>\
-      <textarea ${rDisabledAttr} ${rOnlyAttr} id="${id}" name="${id}" 
-      oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
-      style="width: 100%;
-      height: 200px;
-      background-color: white;
-      margin-left: 4px;
-      margin-right: 4px;
-      padding-left: 9px;
-      padding-top: 14px;
-      border-style: solid;
-      border-width: 1px;
-      border-color: #c7c7c7;
-      border-radius: 5px;
-      font-size: 16px;
-      color: #757575;
-      line-height: 20px;
-      
-      data-binding="${editElement.binding}">${value}</textarea>`;
-		}
-
 		return {
 			html: html,
 			id: id,
 			value: value,
+		};
+	};
+
+	FamilyTree.elements.hiddenField = function (
+		data: any,
+		editElement: any,
+		minWidth: any,
+		readOnly: any
+	) {
+		return {
+			html: "",
 		};
 	};
 
@@ -122,27 +110,6 @@ export default function addTemplate(FamilyTree: any) {
 		"</image>";
 	FamilyTree.templates.myTemplate.field_0 =
 		'<text style="font-size: 18px;" fill="#000000" x="100" y="230" text-anchor="middle" data-text-overflow="multiline">{val}</text>';
-	// FamilyTree.templates.myTemplate.field_1 =
-	// 	'<text style="font-size: 16px;" fill="#ffffff" x="100" y="60" text-anchor="middle">{val}</text>';
-
-	// FamilyTree.templates.myTemplate.link =
-	// '<path stroke="#686868" stroke-width="1px" fill="none" data-l-id="[{id}][{child-id}]" d="M{xa},{ya} C{xb},{yb} {xc},{yc} {xd},{yd}" />';
-
-	// FamilyTree.templates.myTemplate.nodeMenuButton =
-	// 	'<g style="cursor:pointer;" transform="matrix(1,0,0,1,93,15)" data-ctrl-n-menu-id="{id}">' +
-	// 	'<rect x="-4" y="-10" fill="#000000" fill-opacity="0" width="22" height="22">' +
-	// 	"</rect>" +
-	// 	'<line x1="0" y1="0" x2="0" y2="10" stroke-width="2" stroke="rgb(255, 202, 40)" />' +
-	// 	'<line x1="7" y1="0" x2="7" y2="10" stroke-width="2" stroke="rgb(255, 202, 40)" />' +
-	// 	'<line x1="14" y1="0" x2="14" y2="10" stroke-width="2" stroke="rgb(255, 202, 40)" />' +
-	// 	"</g>";
-
-	// FamilyTree.templates.myTemplate.menuButton =
-	// 	'<div style="position:absolute;right:{p}px;top:{p}px; width:40px;height:50px;cursor:pointer;" data-ctrl-menu="">' +
-	// 	'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
-	// 	'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
-	// 	'<hr style="background-color: rgb(255, 202, 40); height: 3px; border: none;">' +
-	// 	"</div>";
 
 	FamilyTree.templates.myTemplate.pointer =
 		'<g data-pointer="pointer" transform="matrix(0,0,0,0,100,100)">><g transform="matrix(0.3,0,0,0.3,-17,-17)">' +

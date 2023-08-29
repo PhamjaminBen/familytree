@@ -74,3 +74,43 @@
     @apply bg-background text-foreground;
   }
 }
+
+.bft-edit-form-close {
+  position: absolute;
+  left: 10px;
+  top: 5px !important;
+  width: 45px !important;
+  height: 45px !important;
+  cursor: pointer;
+  transform: rotate(180deg);
+  border-radius: 100%;
+  stroke-width: 3px;
+  stroke: white;
+  padding: 6px;
+  
+}
+
+._dcen.female .bft-edit-form-header {
+  background: linear-gradient(90deg, #FF8024 0%, #FF46A3 100%);
+}
+
+._ezhc.male .bft-edit-form-header {
+  background: linear-gradient(90deg, #00D3A5 0%, #00A7D4 100%);
+}
+
+.bft-edit-form-header {
+  background: linear-gradient(90deg, #FF46A3 0%, #00A7D4 100%);
+}
+
+.bft-edit-form-title {
+  color: #fafafa !important;
+  padding-top: 14px !important;
+  padding-left: 15% !important;
+  padding-right: 15% !important;
+  width: 100% !important;
+  font-size: 25px !important;
+}
+
+.bft-edit-form-instruments {
+  min-height: 0px !important;
+}
