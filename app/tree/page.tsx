@@ -7,37 +7,35 @@ import FamilyTree from "@balkangraph/familytree.js";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
+import { QueryKey, useQuery } from "@tanstack/react-query";
 
-addTemplate(FamilyTree);
+const fetchData = async () => {
+	const data = await fetch("/api");
+	const cleanData = await data.json();
+	return cleanData;
+};
 
 export default function Tree() {
+	addTemplate(FamilyTree);
 	if (!store.getState().user.verified) {
 		redirect("/login");
 	}
-	// // 	const [data, setData] = useState<familyTreeData | null>(null);
-	// console.log(familyTreeData);
-	const [loading, setLoading] = useState<Boolean>(true);
+
+	const { isLoading, isError, data, error } = useQuery({
+		queryKey: ["treeData"],
+		queryFn: fetchData,
+	});
 
 	useEffect(() => {
-		const getData = async () => {
-			const data = await fetch("/api");
-			const cleanData = await data.json();
-			setLoading(false);
-			return cleanData;
-		};
-
 		let tree: FamilyTree;
-		getData().then((data) => {
+		if (!isLoading) {
 			tree = createTree(data);
+		}
+	}, [isLoading]);
 
-			tree.editUI.on("button-click", (sender, args) => {
-				sender.hide();
-			});
-		});
-	}, []);
 	return (
 		<div className='flex flex-col items-center bg-white h-[87vh]'>
-			{loading ? (
+			{isLoading ? (
 				<h1 className='m-auto text-[5rem] font-bold w-full text-center absolute top-1/3 '>
 					Loading...
 				</h1>
@@ -56,7 +54,7 @@ export default function Tree() {
 			)}
 			<div
 				id='tree'
-				className='h-[85vh] sm:h-[94vh] w-[98vw] rounded-xl mb-10 mt-1 '
+				className='h-[85vh] sm:h-[97vh] w-[98vw] rounded-xl mb-1 mt-1 '
 			></div>
 		</div>
 	);

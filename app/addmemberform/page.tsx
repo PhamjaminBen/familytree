@@ -1,21 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { useForm, SubmitHandler, Controller, Field } from "react-hook-form";
-import { Cloudinary } from "@cloudinary/url-gen";
+import { useState } from "react";
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { redirect } from "next/navigation";
-import { useNavigate } from "react-router-dom";
 import Confirmation from "@/components/confirmation";
 import { store } from "@/lib/store";
-
-const cld = new Cloudinary({
-	cloud: {
-		cloudName: "dogeq8qft",
-		apiSecret: "Vn5ftFV0eZJPkVcAUWJ95w7mYoY",
-		apiKey: "771763696918615",
-	},
-});
 
 type Inputs = {
 	name: string;
@@ -35,24 +25,6 @@ type Inputs = {
 	portrait: any;
 };
 
-interface input {
-	id?: number;
-	name: string;
-	gender: string;
-	pids?: string | number[];
-	fid?: number;
-	mid?: number;
-	children?: any;
-	birthdate?: any;
-	profession?: string;
-	hobbies?: string;
-	phone?: string;
-	bio?: string;
-	instagram: string;
-	email: string;
-	facebook: string;
-	portrait: any;
-}
 const checkKeyDown = (e: React.KeyboardEvent) => {
 	if (e.key === "Enter") e.preventDefault();
 };
@@ -78,21 +50,19 @@ export default function AddMemberForm() {
 			const formData = new FormData();
 			formData.append("file", entry.portrait);
 			formData.append("upload_preset", "image_preset");
-			const result = await fetch(
-				`https://api.cloudinary.com/v1_1/dogeq8qft/image/upload`,
-				{ method: "POST", body: formData }
-			)
+			await fetch(`https://api.cloudinary.com/v1_1/dogeq8qft/image/upload`, {
+				method: "POST",
+				body: formData,
+			})
 				.then((result) => {
 					return result.json();
 				})
 				.then((data) => {
 					delete entry.portrait;
 					entry.portrait = data.url;
-					console.log(entry);
 				});
 		}
 
-		// console.log(entry, result);
 		fetch("../api", {
 			method: "POST",
 			body: JSON.stringify({
