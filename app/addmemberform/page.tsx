@@ -248,7 +248,7 @@ export default function AddMemberForm() {
 
 			<input
 				type='submit'
-				className='w-fit px-5 py-3 rounded-full bg-slate-800 text-white'
+				className='w-fit px-5 py-3 bg-[#9ac0dd] text-white rounded-full hover:bg-white hover:text-[#9ac0dd] hover:border-[#9ac0dd] border-white   border-2 active:text-2xl  font-semibold'
 			/>
 		</form>
 	);

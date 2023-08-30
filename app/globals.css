@@ -90,12 +90,12 @@
   
 }
 
-._dcen.female .bft-edit-form-header {
-  background: linear-gradient(90deg, #FF8024 0%, #FF46A3 100%);
+.female .bft-edit-form-header {
+  background: linear-gradient(90deg, #f14e84 0%, #da3aad 100%) !important;
 }
 
-._ezhc.male .bft-edit-form-header {
-  background: linear-gradient(90deg, #00D3A5 0%, #00A7D4 100%);
+.male .bft-edit-form-header {
+  background: linear-gradient(90deg, #67c9b4 0%, #54c9e9 100%) !important;
 }
 
 .bft-edit-form-header {
@@ -109,8 +109,31 @@
   padding-right: 15% !important;
   width: 100% !important;
   font-size: 25px !important;
+  font-family: 'EB Garamond' !important;
+  font-weight: 500;
 }
 
 .bft-edit-form-instruments {
   min-height: 0px !important;
 }
+
+.bft-light{
+  background-color: #fbfbfb  !important;
+}
+
+.node text{
+  font-family: 'EB Garamond' !important;
+}
+
+.bft-input input{
+  font-family: 'EB Garamond' !important;
+}
+
+.hasval{
+  font-family: 'EB Garamond' !important;
+}
+
+.bft-form-fieldset{
+  font-family: 'EB Garamond' !important;
+}
+

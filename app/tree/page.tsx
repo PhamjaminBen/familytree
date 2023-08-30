@@ -6,8 +6,8 @@ import { store } from "@/lib/store";
 import FamilyTree from "@balkangraph/familytree.js";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { useEffect, useState } from "react";
-import { QueryKey, useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 const fetchData = async () => {
 	const data = await fetch("/api");
@@ -21,7 +21,7 @@ export default function Tree() {
 		redirect("/login");
 	}
 
-	const { isLoading, isError, data, error } = useQuery({
+	const { isLoading, data } = useQuery({
 		queryKey: ["treeData"],
 		queryFn: fetchData,
 	});

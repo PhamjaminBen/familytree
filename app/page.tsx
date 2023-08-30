@@ -9,11 +9,16 @@ export default function Home() {
 		redirect("/login");
 	}
 	return (
-		<div className='flex flex-col gap-y-16 items-center text-center text-xl max-w-5xl m-auto p-10'>
-			<h1 className='text-black font-bold text-6xl'>
-				The Phams - 1977 and Soaring
-			</h1>
-			<p className='text-2xl'>
+		<div className='flex flex-col gap-y-16 items-center text-center text-lg md:text-2xl max-w-5xl m-auto p-10'>
+			<div id='title'>
+				<h1 className='text-black font-bold  text-6xl md:text-9xl w-[100vw]'>
+					The Pham Family
+				</h1>
+				<h2 className='text-slate-800 font-bold  text-lg md:text-3xl mt-5'>
+					1977 and Soaring
+				</h2>
+			</div>
+			<p className=''>
 				<b>Welcome!</b> This is a website dedicated to the history and ancestry
 				of the Pham family, who first came to the United States in 1977.
 				Currently a Work in Progess, stay tuned🫡
@@ -27,13 +32,13 @@ export default function Home() {
 			<div className='flex flex-row flex-wrap space-y-5 space-x-0 sm:space-x-5 sm:space-y-0 justify-center'>
 				<Link
 					href='/tree'
-					className=' bg-blue-500 text-white py-5 px-7  text-2xl rounded-full hover:bg-indigo-600  active:text-2xl font-semibold'
+					className=' bg-[#9ac0dd] text-white py-5 px-7 rounded-full hover:bg-white hover:text-[#9ac0dd] hover:border-[#9ac0dd] border-white   border-2 active:text-2xl font-semibold'
 				>
 					Go to family tree
 				</Link>
 				<Link
 					href='/addmemberform'
-					className=' bg-blue-500 text-white py-5 px-7  text-2xl rounded-full hover:bg-indigo-600 active:text-2xl  font-semibold'
+					className=' bg-[#9ac0dd] text-white py-5 px-7 rounded-full hover:bg-white hover:text-[#9ac0dd] hover:border-[#9ac0dd] border-white   border-2 active:text-2xl  font-semibold'
 				>
 					Add yourself to the tree!
 				</Link>

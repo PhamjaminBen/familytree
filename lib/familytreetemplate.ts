@@ -125,11 +125,11 @@ export default function addTemplate(FamilyTree: any) {
 		FamilyTree.templates.myTemplate
 	);
 	FamilyTree.templates.myTemplate_male.node =
-		'<circle cx="100" cy="100" r="100" fill="#039be5" stroke-width="1" stroke="#aeaeae"></circle>';
+		'<circle cx="100" cy="100" r="100" fill="	#9ac0dd" stroke-width="1" stroke="#aeaeae"></circle>';
 	FamilyTree.templates.myTemplate_female = Object.assign(
 		{},
 		FamilyTree.templates.myTemplate
 	);
 	FamilyTree.templates.myTemplate_female.node =
-		'<circle cx="100" cy="100" r="100" fill="#FF46A3" stroke-width="1" stroke="#aeaeae"></circle>';
+		'<circle cx="100" cy="100" r="100" fill="#DD9AC0" stroke-width="1" stroke="#aeaeae"></circle>';
 }
