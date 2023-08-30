@@ -78,7 +78,6 @@ export default function AddMemberForm() {
 		return (
 			<Confirmation
 				onSubmit={() => {
-					console.log("clicked");
 					setSubmitted(false);
 					location.reload();
 				}}
@@ -167,6 +166,7 @@ export default function AddMemberForm() {
 				fill out at least one box in this section so we know how you are related
 				to the rest of the tree.
 			</p>
+
 			<label className='pt-5'>Husband/Wife</label>
 			<input
 				{...register("partner")}

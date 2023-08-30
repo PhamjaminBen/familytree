@@ -8,6 +8,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { Circles } from "react-loader-spinner";
 
 const fetchData = async () => {
 	const data = await fetch("/api");
@@ -36,9 +37,20 @@ export default function Tree() {
 	return (
 		<div className='flex flex-col items-center bg-white h-[87vh]'>
 			{isLoading ? (
-				<h1 className='m-auto text-[5rem] font-bold w-full text-center absolute top-1/3 '>
-					Loading...
-				</h1>
+				<>
+					<h1 className='m-auto text-[5rem] font-bold w-full text-center absolute top-1/3 '>
+						Loading...
+					</h1>
+					<Circles
+						height='80'
+						width='80'
+						color='#000'
+						ariaLabel='circles-loading'
+						wrapperStyle={{ position: "absolute", top: "50%" }}
+						wrapperClass=''
+						visible={true}
+					/>
+				</>
 			) : (
 				<div className='bg-slate-100 opacity-0 sm:opacity-100 p-5 rounded-xl self-start absolute top-0 sm:top-[12vh] z-20 space-y-10 mx-5'>
 					<h1 className='m-auto sm:text-lg font-semibold w-full text-left'>

@@ -17,15 +17,21 @@ export default function Login() {
 	}
 
 	return (
-		<div className='h-full w-full flex flex-col justify-center items-center'>
-			<p className='text-center text-xl font-bold absolute top-[15vh] max-w-5xl px-10'>
+		<div className='h-full w-full flex flex-col justify-center items-center text-center gap-y-5'>
+			<div id='title'>
+				<h1 className='text-black font-bold  text-6xl md:text-9xl w-[100vw] mt-10'>
+					The Pham Family
+				</h1>
+				<h2 className='text-slate-800 font-bold  text-lg md:text-3xl mt-5'>
+					1977 and Soaring
+				</h2>
+			</div>
+			<p className='text-center text-xl font-bold max-w-5xl px-10 mt-10'>
 				<b>Welcome to the Pham family website!</b> To ensure privacy, please use
 				the password to access the website. If you don&apos;t know the password,
 				please ask whoever gave you the website link to provide it to you.
 			</p>
-			<h1 className='text-center text-5xl font-bold absolute top-[40vh]'>
-				Enter Password
-			</h1>
+			<h1 className='text-center text-5xl font-bold '>Enter Password</h1>
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();
@@ -38,7 +44,7 @@ export default function Login() {
 						setErrorMessage("Wrong Password.");
 					}
 				}}
-				className={` text-slate-800 absolute top-[50vh]`}
+				className={` text-slate-800`}
 			>
 				<input
 					autoFocus={true}

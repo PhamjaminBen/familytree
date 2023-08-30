@@ -3,6 +3,7 @@ import { store } from "@/lib/store";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { Circles } from "react-loader-spinner";
 
 export default function Home() {
 	if (!store.getState().user.verified) {

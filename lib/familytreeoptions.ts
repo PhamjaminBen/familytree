@@ -8,7 +8,7 @@ interface familyTreeData {
 		fid?: number;
 		name: string;
 		gender?: string;
-		img?: string;
+		portrait?: string;
 		bio?: string;
 	};
 }
