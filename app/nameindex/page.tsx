@@ -5,120 +5,11 @@ import { ColumnDef } from "@tanstack/react-table";
 import DataTable from "@/components/datatable";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-type Person = {
-	name: string;
-	year?: string;
-	marraige?: string;
-	mother?: string;
-	father?: string;
-};
+import { columns } from "@/components/columns";
 
 type StringDict = {
 	[details: string]: string;
 };
-
-const columns: ColumnDef<Person>[] = [
-	{
-		accessorKey: "name",
-		header: ({ column }) => {
-			return (
-				<Button
-					className='text-xl font-bold text-black'
-					variant='ghost'
-					onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-				>
-					Name
-					<ArrowUpDown className='ml-2 h-4 w-4' />
-				</Button>
-			);
-		},
-		cell: ({ row }) => (
-			<div className='text-[1rem] ml-4'>{row.getValue("name")}</div>
-		),
-	},
-	{
-		accessorKey: "birthdate",
-		header: ({ column }) => {
-			return (
-				<Button
-					className='text-xl font-bold text-black'
-					variant='ghost'
-					onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-				>
-					D.O.B
-					<ArrowUpDown className='ml-2 h-4 w-4' />
-				</Button>
-			);
-		},
-		cell: ({ row }) => (
-			<div className='text-[1rem] ml-4'>{row.getValue("birthdate")}</div>
-		),
-	},
-	{
-		accessorKey: "father",
-		header: ({ column }) => {
-			return (
-				<Button
-					className='text-xl font-bold text-black'
-					variant='ghost'
-					onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-				>
-					Father
-					<ArrowUpDown className='ml-2 h-4 w-4' />
-				</Button>
-			);
-		},
-		cell: ({ row }) => (
-			<div className='text-[1rem] ml-4'>{row.getValue("father")}</div>
-		),
-	},
-	{
-		accessorKey: "mother",
-		header: ({ column }) => {
-			return (
-				<Button
-					className='text-xl font-bold text-black'
-					variant='ghost'
-					onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-				>
-					Mother
-					<ArrowUpDown className='ml-2 h-4 w-4' />
-				</Button>
-			);
-		},
-		cell: ({ row }) => (
-			<div className='text-[1rem] ml-4'>{row.getValue("mother")}</div>
-		),
-	},
-	{
-		accessorKey: "marriage",
-		header: ({ column }) => {
-			return (
-				<Button
-					className='text-xl font-bold text-black'
-					variant='ghost'
-					onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-				>
-					Marriage
-					<ArrowUpDown className='ml-2 h-4 w-4' />
-				</Button>
-			);
-		},
-		cell: ({ row }) => {
-			const values: String[] = row.getValue("marriage");
-			return (
-				<>
-					{values.map((person, id) => (
-						<div key={id.toString()} className='text-[1rem] ml-4'>
-							{person}
-						</div>
-					))}
-				</>
-			);
-		},
-	},
-];
 
 const getData = async () => {
 	const data = await fetch("/api").then((response) => {
@@ -156,11 +47,12 @@ export default function NameIndex() {
 		NameDict[obj.id] = obj.name;
 	}
 
+	console.log(data);
 	for (let obj of data) {
 		obj.father = NameDict[obj.fid];
 		obj.mother = NameDict[obj.mid];
-		console.log(obj.pids.at(0));
 		obj.marriage = obj.pids.map((id: string) => NameDict[id]);
+		obj.data = { ...obj };
 	}
 
 	return (
