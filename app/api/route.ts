@@ -20,7 +20,6 @@ export async function DELETE(request: Request) {
 	const client = await clientPromise;
 	const treeDB = client.db("data").collection("treeData");
 	treeDB.deleteMany({});
-	return JSON.stringify({ response: "ok" });
 }
 
 export async function PATCH(request: Request) {
@@ -32,8 +31,6 @@ export async function PATCH(request: Request) {
 	treeDB.replaceOne({ id: data.person.id }, data.person, {
 		upsert: true,
 	});
-
-	return JSON.stringify({ response: "ok" });
 }
 
 export async function POST(request: Request) {
@@ -46,5 +43,4 @@ export async function POST(request: Request) {
 
 	const cursor = await formDB.insertOne(person);
 	console.log("inserted id: ", cursor.insertedId);
-	return JSON.stringify({ response: "ok" });
 }

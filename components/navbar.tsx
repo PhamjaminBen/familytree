@@ -27,6 +27,11 @@ export default function NavBar() {
 							Add Members
 						</Link>
 					</li>
+					<li>
+						<Link href='/nameindex' className='hover:underline'>
+							Name Index
+						</Link>
+					</li>
 				</ul>
 			</div>
 		</nav>
