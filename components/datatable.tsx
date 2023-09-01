@@ -42,7 +42,7 @@ export default function DataTable<TData, TValue>({
 	});
 
 	return (
-		<div className='rounded-md border max-w-[90vw] overflow-x-scroll'>
+		<div className='rounded-md border max-w-[95vw] overflow-x-scroll'>
 			<Table>
 				<TableHeader>
 					{table.getHeaderGroups().map((headerGroup) => (

@@ -1,10 +1,7 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import { Circles } from "react-loader-spinner";
-import { ColumnDef } from "@tanstack/react-table";
 import DataTable from "@/components/datatable";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { columns } from "@/components/columns";
 
 type StringDict = {
@@ -57,6 +54,9 @@ export default function NameIndex() {
 
 	return (
 		<div className='flex flex-col items-center bg-white my-10'>
+			<p className='text-left w-[95vw] xl:w-1/2 mb-5'>
+				Currently showing {data.length} names
+			</p>
 			<DataTable columns={columns} data={data} />
 		</div>
 	);
