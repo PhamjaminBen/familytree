@@ -1,7 +1,7 @@
 import Link from "next/link";
 export default function NavBar() {
 	return (
-		<nav className='bg-white text-black font-semibold w-full shadow-md'>
+		<nav className='bg-white text-black font-semibold max-w-[100vw] shadow-md'>
 			<div
 				id='content'
 				className=' py-5 px-5 md:px-20 m-auto text-sm md:text-lg'
