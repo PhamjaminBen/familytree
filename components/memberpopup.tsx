@@ -19,7 +19,7 @@ export default function MemberPopup({ data }: PopupProps) {
 			<DialogTrigger className='text-[1rem] hover:underline'>
 				{data.name}
 			</DialogTrigger>
-			<DialogContent>
+			<DialogContent className='max-h-[100vh] max-w-[100vw] md:max-w-3xl overflow-y-scroll'>
 				<DialogHeader>
 					<DialogTitle>Family Member</DialogTitle>
 				</DialogHeader>
