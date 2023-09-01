@@ -109,8 +109,10 @@ const columns: ColumnDef<Person>[] = [
 			const values: String[] = row.getValue("marriage");
 			return (
 				<>
-					{values.map((person) => (
-						<div className='text-[1rem] ml-4'>{person}</div>
+					{values.map((person, id) => (
+						<div key={id.toString()} className='text-[1rem] ml-4'>
+							{person}
+						</div>
 					))}
 				</>
 			);

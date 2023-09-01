@@ -32,7 +32,7 @@ export default function Tree() {
 		if (!isLoading) {
 			tree = createTree(data);
 		}
-	}, [isLoading]);
+	}, [isLoading, data]);
 
 	return (
 		<div className='flex flex-col items-center bg-white h-[87vh]'>
