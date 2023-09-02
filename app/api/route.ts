@@ -12,7 +12,11 @@ export async function GET() {
 		retobj.push(doc);
 	}
 
-	return new Response(JSON.stringify(retobj));
+	const sorted = retobj.sort((x, y) =>
+		x.name === "Pham Duc Dien" || y.name === "Pham Duc Dien" ? -1 : 1
+	);
+
+	return new Response(JSON.stringify(sorted));
 }
 
 export async function DELETE(request: Request) {
