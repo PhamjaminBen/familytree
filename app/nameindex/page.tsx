@@ -3,6 +3,8 @@ import { useQuery } from "@tanstack/react-query";
 import { Circles } from "react-loader-spinner";
 import DataTable from "@/components/datatable";
 import { columns } from "@/components/columns";
+import { redirect } from "next/navigation";
+import { store } from "@/lib/store";
 
 type StringDict = {
 	[details: string]: string;
@@ -16,6 +18,10 @@ const getData = async () => {
 };
 
 export default function NameIndex() {
+	if (!store.getState().user.verified) {
+		redirect("/login");
+	}
+
 	const { isLoading, data } = useQuery({
 		queryKey: ["data"],
 		queryFn: getData,
