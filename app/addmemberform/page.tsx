@@ -14,7 +14,9 @@ type Inputs = {
 	father: string;
 	mother: string;
 	children: string;
-	birthdate: string;
+	birthyear: string;
+	birthmonth: string;
+	birthday: string;
 	profession: string;
 	hobbies: string;
 	phone: string;
@@ -23,6 +25,28 @@ type Inputs = {
 	email: string;
 	facebook: string;
 	portrait: any;
+	birthdate: any;
+};
+
+type FormData = {
+	name?: string;
+	gender?: string;
+	partner?: string;
+	father?: string;
+	mother?: string;
+	children?: string;
+	birthyear?: string;
+	birthmonth?: string;
+	birthday?: string;
+	profession?: string;
+	hobbies?: string;
+	phone?: string;
+	bio?: string;
+	instagram?: string;
+	email?: string;
+	facebook?: string;
+	portrait?: any;
+	birthdate?: any;
 };
 
 const checkKeyDown = (e: React.KeyboardEvent) => {
@@ -45,7 +69,16 @@ export default function AddMemberForm() {
 	const [img, setImg] = useState("");
 	const [submitted, setSubmitted] = useState(false);
 
-	const onSubmit: SubmitHandler<Inputs> = async (entry: any) => {
+	const onSubmit: SubmitHandler<Inputs> = async (entry: FormData) => {
+		entry.birthdate = `${entry.birthyear}-${entry.birthmonth?.padStart(
+			2,
+			"0"
+		)}-${entry.birthday?.padStart(2, "0")}`;
+		console.log(entry);
+		delete entry.birthyear;
+		delete entry.birthmonth;
+		delete entry.birthday;
+
 		if (entry.portrait) {
 			const formData = new FormData();
 			formData.append("file", entry.portrait);
@@ -86,7 +119,7 @@ export default function AddMemberForm() {
 
 	return (
 		<form
-			className='px-5 py-10 max-w-full md:w-2/5 m-auto flex flex-col space-y-3'
+			className='px-5 py-10 max-w-3xl m-auto flex flex-col space-y-3'
 			onKeyDown={(e) => {
 				checkKeyDown(e);
 			}}
@@ -154,11 +187,55 @@ export default function AddMemberForm() {
 			/>
 
 			<label className='pt-5'>Date of Birth</label>
-			<input
-				{...register("birthdate")}
-				type='date'
-				className='px-5 py-3 border-2 border-slate-800/50 rounded-xl w-full'
-			/>
+			<div className=' flex flex-col lg:flex-row flex-wrap space-y-3 lg:space-y-0 space-x-0 lg:space-x-3'>
+				<label className='mr-2'>Year</label>
+				<select
+					{...register("birthyear")}
+					defaultValue={2023}
+					className='w-24 px-5 py-3 border-2 border-slate-800/50 rounded-xl'
+				>
+					{Array(200)
+						.fill(1)
+						.map((x, y) => 2030 - (x + y))
+						.map((number: number, x: number) => (
+							<option key={x} value={number}>
+								{number}
+							</option>
+						))}
+				</select>
+
+				<label className='mr-2'>Month</label>
+				<select
+					{...register("birthmonth")}
+					defaultValue={1}
+					className='w-24 px-5 py-3 border-2 border-slate-800/50 rounded-xl'
+				>
+					{Array(12)
+						.fill(1)
+						.map((x, y) => x + y)
+						.map((number: number, x: number) => (
+							<option key={x} value={number}>
+								{number}
+							</option>
+						))}
+				</select>
+
+				<label className='mr-2'>Day</label>
+				<select
+					{...register("birthday")}
+					className='w-24 px-5 py-3 border-2 border-slate-800/50 rounded-xl'
+					defaultValue={1}
+				>
+					{Array(31)
+						.fill(1)
+						.map((x, y) => x + y)
+						.map((number: number, x: number) => (
+							<option key={x} value={number}>
+								{number}
+							</option>
+						))}
+				</select>
+			</div>
 
 			<h1 className='text-5xl font-bold pt-10'>Family Info</h1>
 			<p className='bg-slate-100 p-5 rounded-3xl'>

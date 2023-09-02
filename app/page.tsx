@@ -41,7 +41,7 @@ export default function Home() {
 					href='/addmemberform'
 					className=' bg-[#9ac0dd] text-white py-5 px-7 rounded-full hover:bg-white hover:text-[#9ac0dd] hover:border-[#9ac0dd] border-white   border-2 active:text-2xl  font-semibold'
 				>
-					Add yourself to the tree!
+					Add to the tree
 				</Link>
 			</div>
 
