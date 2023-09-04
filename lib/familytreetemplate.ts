@@ -138,47 +138,47 @@ export default function addTemplate(FamilyTree: any) {
 		FamilyTree.templates.myTemplate
 	);
 	FamilyTree.templates.myTemplate_gen1.node =
-		'<circle cx="100" cy="100" r="100" fill="#A3387A" stroke-width="1" stroke="#aeaeae"></circle>';
+		'<circle cx="100" cy="100" r="100" fill="#FFCD6F" stroke-width="1" stroke="#aeaeae"></circle>';
 
 	FamilyTree.templates.myTemplate_gen2 = Object.assign(
 		{},
 		FamilyTree.templates.myTemplate
 	);
 	FamilyTree.templates.myTemplate_gen2.node =
-		'<circle cx="100" cy="100" r="100" fill="#9D4C93" stroke-width="1" stroke="#aeaeae"></circle>';
+		'<circle cx="100" cy="100" r="100" fill="#FFA785" stroke-width="1" stroke="#aeaeae"></circle>';
 
 	FamilyTree.templates.myTemplate_gen3 = Object.assign(
 		{},
 		FamilyTree.templates.myTemplate
 	);
 	FamilyTree.templates.myTemplate_gen3.node =
-		'<circle cx="100" cy="100" r="100" fill="#925EA8" stroke-width="1" stroke="#aeaeae"></circle>';
+		'<circle cx="100" cy="100" r="100" fill="#F98E9F" stroke-width="1" stroke="#aeaeae"></circle>';
 
 	FamilyTree.templates.myTemplate_gen4 = Object.assign(
 		{},
 		FamilyTree.templates.myTemplate
 	);
 	FamilyTree.templates.myTemplate_gen4.node =
-		'<circle cx="100" cy="100" r="100" fill="#688ECF" stroke-width="1" stroke="#aeaeae"></circle>';
+		'<circle cx="100" cy="100" r="100" fill="#9079A8" stroke-width="1" stroke="#aeaeae"></circle>';
 
 	FamilyTree.templates.myTemplate_gen5 = Object.assign(
 		{},
 		FamilyTree.templates.myTemplate
 	);
 	FamilyTree.templates.myTemplate_gen5.node =
-		'<circle cx="100" cy="100" r="100" fill="#767FC7" stroke-width="1" stroke="#aeaeae"></circle>';
+		'<circle cx="100" cy="100" r="100" fill="#8F91BF" stroke-width="1" stroke="#aeaeae"></circle>';
 
 	FamilyTree.templates.myTemplate_gen6 = Object.assign(
 		{},
 		FamilyTree.templates.myTemplate
 	);
 	FamilyTree.templates.myTemplate_gen6.node =
-		'<circle cx="100" cy="100" r="100" fill="#846FBA" stroke-width="1" stroke="#aeaeae"></circle>';
+		'<circle cx="100" cy="100" r="100" fill="#91A9D0" stroke-width="1" stroke="#aeaeae"></circle>';
 
 	FamilyTree.templates.myTemplate_gen7 = Object.assign(
 		{},
 		FamilyTree.templates.myTemplate
 	);
 	FamilyTree.templates.myTemplate_gen7.node =
-		'<circle cx="100" cy="100" r="100" fill="#925EA8" stroke-width="1" stroke="#aeaeae"></circle>';
+		'<circle cx="100" cy="100" r="100" fill="#9AC0DD" stroke-width="1" stroke="#aeaeae"></circle>';
 }
