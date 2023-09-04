@@ -2,7 +2,7 @@
 
 import { verify } from "@/lib/userslice";
 import { store } from "@/lib/store";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation";
 

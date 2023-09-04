@@ -9,10 +9,62 @@ import { redirect } from "next/navigation";
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Circles } from "react-loader-spinner";
+import { Person } from "@/types/persontype";
+
+type generation = {
+	[id: string]: number;
+};
 
 const fetchData = async () => {
 	const data = await fetch("/api");
 	const cleanData = await data.json();
+
+	const familyMembers = ["_5qz7"];
+	const famgens: generation = {};
+	famgens["_5qz7"] = 1;
+
+	let remaining: Person[] = [];
+	let current: Person[] = [...cleanData];
+	while (true) {
+		// for (let x of [1, 1, 1, 1, 1]) {
+		let numChanged = 0;
+		for (let member of current) {
+			if (!member.fid) member.fid = "";
+			if (!member.mid) member.mid = "";
+			if (familyMembers.includes(member.fid)) {
+				numChanged += 1;
+				familyMembers.push(member.id);
+				famgens[member.id] = famgens[member.fid] + 1;
+			} else if (familyMembers.includes(member.mid)) {
+				numChanged += 1;
+				familyMembers.push(member.id);
+				famgens[member.id] = famgens[member.mid] + 1;
+			} else {
+				remaining.push(member);
+			}
+		}
+		// console.log(
+		// 	"remaining",
+		// 	remaining.map((person) => person.id)
+		// );
+		// console.log("Memebrs", familyMembers);
+		current = [...remaining];
+		if (numChanged === 0) break;
+		remaining = [];
+		// console.log(numChanged);
+	}
+	console.log(familyMembers);
+	console.log(remaining);
+	console.log(famgens);
+	for (const member of cleanData) {
+		if (famgens[member.id]) {
+			member.tags = [`gen${famgens[member.id]}`];
+		} else {
+			member.tags = ["spouse"];
+		}
+	}
+
+	console.log(cleanData);
 	return cleanData;
 };
 
@@ -31,6 +83,19 @@ export default function Tree() {
 		let tree: FamilyTree;
 		if (!isLoading) {
 			tree = createTree(data);
+			tree.on("render-link", function (sender, args) {
+				var cnodeData: any = tree.get(args.cnode.id);
+				var nodeData: any = tree.get(args.node.id);
+
+				const divorced = ["Ho Thi Hai Duong", "Pham Thanh Nguyen"];
+
+				if (
+					divorced.includes(cnodeData.name) ||
+					divorced.includes(nodeData.name)
+				) {
+					args.html = args.html.replace("path", "path stroke-dasharray='3, 2'");
+				}
+			});
 		}
 	}, [isLoading, data]);
 

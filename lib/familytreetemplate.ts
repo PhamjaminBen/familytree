@@ -132,4 +132,53 @@ export default function addTemplate(FamilyTree: any) {
 	);
 	FamilyTree.templates.myTemplate_female.node =
 		'<circle cx="100" cy="100" r="100" fill="#DD9AC0" stroke-width="1" stroke="#aeaeae"></circle>';
+
+	FamilyTree.templates.myTemplate_gen1 = Object.assign(
+		{},
+		FamilyTree.templates.myTemplate
+	);
+	FamilyTree.templates.myTemplate_gen1.node =
+		'<circle cx="100" cy="100" r="100" fill="#A3387A" stroke-width="1" stroke="#aeaeae"></circle>';
+
+	FamilyTree.templates.myTemplate_gen2 = Object.assign(
+		{},
+		FamilyTree.templates.myTemplate
+	);
+	FamilyTree.templates.myTemplate_gen2.node =
+		'<circle cx="100" cy="100" r="100" fill="#9D4C93" stroke-width="1" stroke="#aeaeae"></circle>';
+
+	FamilyTree.templates.myTemplate_gen3 = Object.assign(
+		{},
+		FamilyTree.templates.myTemplate
+	);
+	FamilyTree.templates.myTemplate_gen3.node =
+		'<circle cx="100" cy="100" r="100" fill="#925EA8" stroke-width="1" stroke="#aeaeae"></circle>';
+
+	FamilyTree.templates.myTemplate_gen4 = Object.assign(
+		{},
+		FamilyTree.templates.myTemplate
+	);
+	FamilyTree.templates.myTemplate_gen4.node =
+		'<circle cx="100" cy="100" r="100" fill="#688ECF" stroke-width="1" stroke="#aeaeae"></circle>';
+
+	FamilyTree.templates.myTemplate_gen5 = Object.assign(
+		{},
+		FamilyTree.templates.myTemplate
+	);
+	FamilyTree.templates.myTemplate_gen5.node =
+		'<circle cx="100" cy="100" r="100" fill="#767FC7" stroke-width="1" stroke="#aeaeae"></circle>';
+
+	FamilyTree.templates.myTemplate_gen6 = Object.assign(
+		{},
+		FamilyTree.templates.myTemplate
+	);
+	FamilyTree.templates.myTemplate_gen6.node =
+		'<circle cx="100" cy="100" r="100" fill="#846FBA" stroke-width="1" stroke="#aeaeae"></circle>';
+
+	FamilyTree.templates.myTemplate_gen7 = Object.assign(
+		{},
+		FamilyTree.templates.myTemplate
+	);
+	FamilyTree.templates.myTemplate_gen7.node =
+		'<circle cx="100" cy="100" r="100" fill="#925EA8" stroke-width="1" stroke="#aeaeae"></circle>';
 }

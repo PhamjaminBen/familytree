@@ -24,7 +24,16 @@ export default function createTree(data: familyTreeData[]) {
 		levelSeparation: 100,
 		subtreeSeparation: 200,
 		siblingSeparation: 200,
-
+		tags: {
+			gen1: { template: "myTemplate_gen1" },
+			gen2: { template: "myTemplate_gen2" },
+			gen3: { template: "myTemplate_gen3" },
+			gen4: { template: "myTemplate_gen4" },
+			gen5: { template: "myTemplate_gen5" },
+			gen6: { template: "myTemplate_gen6" },
+			gen7: { template: "myTemplate_gen7" },
+			spouse: { template: "myTemplate_female" },
+		},
 		nodes: data,
 		editForm: {
 			titleBinding: "name",
