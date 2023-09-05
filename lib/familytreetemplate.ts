@@ -110,6 +110,8 @@ export default function addTemplate(FamilyTree: any) {
 		"</image>";
 	FamilyTree.templates.myTemplate.field_0 =
 		'<text style="font-size: 22px;" fill="#000000" x="100" y="230" text-anchor="middle" data-text-overflow="multiline">{val}</text>';
+	FamilyTree.templates.myTemplate.field_1 =
+		'<text style="font-size: 22px;" fill="#000000" x="100" y="260" text-anchor="middle" data-text-overflow="multiline">{val}</text>';
 
 	FamilyTree.templates.myTemplate.pointer =
 		'<g data-pointer="pointer" transform="matrix(0,0,0,0,100,100)">><g transform="matrix(0.3,0,0,0.3,-17,-17)">' +

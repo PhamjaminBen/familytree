@@ -2,6 +2,8 @@ export type Person = {
 	bio?: string;
 	biography?: string;
 	birthdate?: string;
+	deathdate?: string;
+	isdeceased?: string;
 	email?: string;
 	facebook?: string;
 	fid?: string;
@@ -11,8 +13,9 @@ export type Person = {
 	instagram?: string;
 	mid?: string;
 	name?: string;
-	phone: string;
-	pids: string[];
-	portrait: string;
-	profession: string;
+	phone?: string;
+	pids?: string[];
+	portrait?: string;
+	profession?: string;
+	datestring: string;
 };

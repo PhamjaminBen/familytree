@@ -17,6 +17,10 @@ type Inputs = {
 	birthyear: string;
 	birthmonth: string;
 	birthday: string;
+	deathyear: string;
+	deathmonth: string;
+	deathday: string;
+	isdeceased: boolean;
 	profession: string;
 	hobbies: string;
 	phone: string;
@@ -26,6 +30,8 @@ type Inputs = {
 	facebook: string;
 	portrait: any;
 	birthdate: any;
+	deathdate: any;
+	deathknown: boolean;
 };
 
 type FormData = {
@@ -38,6 +44,10 @@ type FormData = {
 	birthyear?: string;
 	birthmonth?: string;
 	birthday?: string;
+	deathyear?: string;
+	deathmonth?: string;
+	deathday?: string;
+	isdeceased?: boolean;
 	profession?: string;
 	hobbies?: string;
 	phone?: string;
@@ -47,6 +57,8 @@ type FormData = {
 	facebook?: string;
 	portrait?: any;
 	birthdate?: any;
+	deathdate?: any;
+	deathknown?: boolean;
 };
 
 const checkKeyDown = (e: React.KeyboardEvent) => {
@@ -74,10 +86,23 @@ export default function AddMemberForm() {
 			2,
 			"0"
 		)}-${entry.birthday?.padStart(2, "0")}`;
-		console.log(entry);
 		delete entry.birthyear;
 		delete entry.birthmonth;
 		delete entry.birthday;
+
+		if (!entry.deathknown || !entry.isdeceased) {
+			entry.deathdate = "";
+		} else {
+			entry.deathdate = `${entry.deathyear}-${entry.deathmonth?.padStart(
+				2,
+				"0"
+			)}-${entry.deathday?.padStart(2, "0")}`;
+		}
+		delete entry.deathyear;
+		delete entry.deathmonth;
+		delete entry.deathday;
+
+		delete entry.deathknown;
 
 		if (entry.portrait) {
 			const formData = new FormData();
@@ -95,6 +120,8 @@ export default function AddMemberForm() {
 					entry.portrait = data.url;
 				});
 		}
+
+		console.log(entry);
 
 		fetch("../api", {
 			method: "POST",
@@ -223,6 +250,67 @@ export default function AddMemberForm() {
 				<label className='mr-2'>Day</label>
 				<select
 					{...register("birthday")}
+					className='w-24 px-5 py-3 border-2 border-slate-800/50 rounded-xl'
+					defaultValue={1}
+				>
+					{Array(31)
+						.fill(1)
+						.map((x, y) => x + y)
+						.map((number: number, x: number) => (
+							<option key={x} value={number}>
+								{number}
+							</option>
+						))}
+				</select>
+			</div>
+
+			<label className='pt-5 text-lg '>
+				Is this person deceased?
+				<input {...register("isdeceased")} type='checkbox' className='ml-2' />
+			</label>
+
+			<label className='pt-5 text-lg '>
+				If deceased, is the date of death known?
+				<input {...register("deathknown")} type='checkbox' className='ml-2' />
+			</label>
+
+			<label className='pt-5'>Date of Death (If applicable and known)</label>
+			<div className=' flex flex-col lg:flex-row flex-wrap space-y-3 lg:space-y-0 space-x-0 lg:space-x-3'>
+				<label className='mr-2'>Year</label>
+				<select
+					{...register("deathyear")}
+					defaultValue={2023}
+					className='w-24 px-5 py-3 border-2 border-slate-800/50 rounded-xl'
+				>
+					{Array(200)
+						.fill(1)
+						.map((x, y) => 2030 - (x + y))
+						.map((number: number, x: number) => (
+							<option key={x} value={number}>
+								{number}
+							</option>
+						))}
+				</select>
+
+				<label className='mr-2'>Month</label>
+				<select
+					{...register("deathmonth")}
+					defaultValue={1}
+					className='w-24 px-5 py-3 border-2 border-slate-800/50 rounded-xl'
+				>
+					{Array(12)
+						.fill(1)
+						.map((x, y) => x + y)
+						.map((number: number, x: number) => (
+							<option key={x} value={number}>
+								{number}
+							</option>
+						))}
+				</select>
+
+				<label className='mr-2'>Day</label>
+				<select
+					{...register("deathday")}
 					className='w-24 px-5 py-3 border-2 border-slate-800/50 rounded-xl'
 					defaultValue={1}
 				>

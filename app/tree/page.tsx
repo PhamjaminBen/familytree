@@ -11,60 +11,34 @@ import { useQuery } from "@tanstack/react-query";
 import { Circles } from "react-loader-spinner";
 import { Person } from "@/types/persontype";
 
-type generation = {
-	[id: string]: number;
-};
-
 const fetchData = async () => {
 	const data = await fetch("/api");
-	const cleanData = await data.json();
+	const cleanData: Person[] = await data.json();
 
-	const familyMembers = ["_5qz7"];
-	const famgens: generation = {};
-	famgens["_5qz7"] = 1;
-
-	let remaining: Person[] = [];
-	let current: Person[] = [...cleanData];
-	while (true) {
-		// for (let x of [1, 1, 1, 1, 1]) {
-		let numChanged = 0;
-		for (let member of current) {
-			if (!member.fid) member.fid = "";
-			if (!member.mid) member.mid = "";
-			if (familyMembers.includes(member.fid)) {
-				numChanged += 1;
-				familyMembers.push(member.id);
-				famgens[member.id] = famgens[member.fid] + 1;
-			} else if (familyMembers.includes(member.mid)) {
-				numChanged += 1;
-				familyMembers.push(member.id);
-				famgens[member.id] = famgens[member.mid] + 1;
+	for (const person of cleanData) {
+		person.datestring = "";
+		if (person.isdeceased === "true") {
+			if (person.birthdate) {
+				const birthyear = new Date(person.birthdate).getFullYear();
+				person.datestring += `${birthyear}-`;
 			} else {
-				remaining.push(member);
+				person.datestring = "???? - ";
+			}
+
+			if (person.deathdate) {
+				const deathyear = new Date(person.deathdate).getFullYear();
+				person.datestring += `${deathyear}`;
+			} else {
+				person.datestring += "????";
+			}
+		} else {
+			if (person.birthdate) {
+				const birthyear = new Date(person.birthdate).getFullYear();
+				person.datestring = `b.${birthyear}`;
 			}
 		}
-		// console.log(
-		// 	"remaining",
-		// 	remaining.map((person) => person.id)
-		// );
-		// console.log("Memebrs", familyMembers);
-		current = [...remaining];
-		if (numChanged === 0) break;
-		remaining = [];
-		// console.log(numChanged);
-	}
-	console.log(familyMembers);
-	console.log(remaining);
-	console.log(famgens);
-	for (const member of cleanData) {
-		if (famgens[member.id]) {
-			member.tags = [`gen${famgens[member.id]}`];
-		} else {
-			member.tags = ["spouse"];
-		}
 	}
 
-	console.log(cleanData);
 	return cleanData;
 };
 
@@ -80,9 +54,10 @@ export default function Tree() {
 	});
 
 	useEffect(() => {
+		if (!data) return;
 		let tree: FamilyTree;
 		if (!isLoading) {
-			tree = createTree(data);
+			tree = createTree(data as any);
 			tree.on("render-link", function (sender, args) {
 				var cnodeData: any = tree.get(args.cnode.id);
 				var nodeData: any = tree.get(args.node.id);

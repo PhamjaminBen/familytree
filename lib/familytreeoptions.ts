@@ -19,9 +19,10 @@ export default function createTree(data: familyTreeData[]) {
 		template: "myTemplate",
 		nodeBinding: {
 			field_0: "name",
+			field_1: "datestring",
 			img_0: "portrait",
 		},
-		levelSeparation: 100,
+		levelSeparation: 150,
 		subtreeSeparation: 200,
 		siblingSeparation: 200,
 		tags: {
@@ -67,6 +68,11 @@ const editElements = [
 		type: "date",
 		label: "Date of Birth",
 		binding: "birthdate",
+	},
+	{
+		type: "date",
+		label: "Date of Death",
+		binding: "deathdate",
 	},
 	{
 		type: "textbox",
@@ -120,7 +126,17 @@ const editElements = [
 	},
 	{
 		type: "hiddenField",
+		label: "isdeceased",
+		binding: "isdeceased",
+	},
+	{
+		type: "hiddenField",
 		label: "gender",
 		binding: "gender",
+	},
+	{
+		type: "hiddenField",
+		label: "datestring",
+		binding: "datestring",
 	},
 ];
