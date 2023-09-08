@@ -30,18 +30,30 @@ export default function Home() {
 				height={750}
 				width={750}
 			></Image> */}
-			<div className='flex flex-row flex-wrap space-y-5 space-x-0 sm:space-x-5 sm:space-y-0 justify-center'>
+			<div className='flex flex-row flex-wrap justify-evenly'>
 				<Link
 					href='/tree'
-					className=' bg-[#9ac0dd] text-white py-5 px-7 rounded-full hover:bg-white hover:text-[#9ac0dd] hover:border-[#9ac0dd] border-white   border-2 active:text-2xl font-semibold'
+					className=' bg-[#9ac0dd] text-white py-5 px-7 w-56 rounded-full hover:bg-white hover:text-[#9ac0dd] hover:border-[#9ac0dd] border-white   border-2 active:text-2xl  m-1.5'
 				>
-					Go to family tree
+					Family Tree
 				</Link>
 				<Link
 					href='/addmemberform'
-					className=' bg-[#9ac0dd] text-white py-5 px-7 rounded-full hover:bg-white hover:text-[#9ac0dd] hover:border-[#9ac0dd] border-white   border-2 active:text-2xl  font-semibold'
+					className=' bg-[#9ac0dd] text-white py-5 px-7 w-56 rounded-full hover:bg-white hover:text-[#9ac0dd] hover:border-[#9ac0dd] border-white   border-2 active:text-2xl   m-1.5'
 				>
-					Add to the tree
+					Add Member
+				</Link>
+				<Link
+					href='/calendar'
+					className=' bg-[#9ac0dd] text-white py-5 px-7 w-56 rounded-full hover:bg-white hover:text-[#9ac0dd] hover:border-[#9ac0dd] border-white   border-2 active:text-2xl   m-1.5'
+				>
+					Calendar
+				</Link>
+				<Link
+					href='/nameindex'
+					className=' bg-[#9ac0dd] text-white py-5 px-7 w-56 rounded-full hover:bg-white hover:text-[#9ac0dd] hover:border-[#9ac0dd] border-white   border-2 active:text-2xl   m-1.5'
+				>
+					Name Index
 				</Link>
 			</div>
 
@@ -63,7 +75,9 @@ export default function Home() {
 					<li className='border-b-2 border-indigo-200 pb-2'>
 						Photo and Video Sharing
 					</li>
-					<li className='border-b-2 border-indigo-200 pb-2'>Event Calendar</li>
+					<li className='border-b-2 border-indigo-200 pb-2 line-through text-gray-600'>
+						Event Calendar
+					</li>
 					<li className='border-b-2 border-indigo-200 pb-2'>Blog Posts</li>
 					<li className='border-b-2 border-indigo-200 pb-2'>
 						Message Board/Forum

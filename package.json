@@ -11,6 +11,9 @@
   "dependencies": {
     "@balkangraph/familytree.js": "^1.8.5",
     "@cloudinary/url-gen": "^1.11.1",
+    "@fullcalendar/core": "^6.1.8",
+    "@fullcalendar/daygrid": "^6.1.8",
+    "@fullcalendar/react": "^6.1.8",
     "@hookform/resolvers": "^3.2.0",
     "@radix-ui/react-dialog": "^1.0.4",
     "@radix-ui/react-label": "^2.0.2",
@@ -30,6 +33,7 @@
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.13",
     "lucide-react": "^0.268.0",
+    "mobiscroll": "^3.0.0-beta6",
     "mongodb": "^5.7.0",
     "multiselect-react-dropdown": "^2.0.25",
     "next": "^13.4.16",
