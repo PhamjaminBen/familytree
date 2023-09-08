@@ -46,20 +46,17 @@ export default function NavBar() {
 								</DropdownMenuLabel>
 								<DropdownMenuSeparator />
 								<DropdownMenuItem>
-									<Link href='/tree' className='hover:underline text-xl'>
+									<Link href='/tree' className='text-xl w-full'>
 										Family Tree
 									</Link>
 								</DropdownMenuItem>
 								<DropdownMenuItem>
-									<Link href='/nameindex' className='hover:underline text-xl'>
+									<Link href='/nameindex' className='text-xl w-full'>
 										Name Index
 									</Link>
 								</DropdownMenuItem>
 								<DropdownMenuItem>
-									<Link
-										href='/addmemberform'
-										className='hover:underline text-xl'
-									>
+									<Link href='/addmemberform' className='text-xl w-full'>
 										Register Family Member
 									</Link>
 								</DropdownMenuItem>
@@ -78,20 +75,17 @@ export default function NavBar() {
 								</DropdownMenuLabel>
 								<DropdownMenuSeparator />
 								<DropdownMenuItem>
-									<Link href='/calendar' className='hover:underline text-xl'>
+									<Link href='/calendar' className='text-xl w-full'>
 										Event Calendar
 									</Link>
 								</DropdownMenuItem>
 								<DropdownMenuItem>
-									<Link href='/bulletin' className='hover:underline text-xl'>
+									<Link href='/bulletin' className='text-xl w-full'>
 										Bulletin Board
 									</Link>
 								</DropdownMenuItem>
 								<DropdownMenuItem>
-									<Link
-										href='/pham-legacy-program'
-										className='hover:underline text-xl'
-									>
+									<Link href='/pham-legacy-program' className='text-xl w-full'>
 										Pham Legacy Program
 									</Link>
 								</DropdownMenuItem>
