@@ -42,6 +42,7 @@ export default function MemberPopup({ data }: PopupProps) {
 						"mother",
 						"father",
 						"birthdate",
+						"deathdate",
 						"phone",
 						"email",
 						"profession",

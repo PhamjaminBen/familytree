@@ -30,7 +30,7 @@ export const columns: ColumnDef<Person>[] = [
 		},
 	},
 	{
-		accessorKey: "birthdate",
+		accessorKey: "datestring",
 		header: ({ column }) => {
 			return (
 				<Button
@@ -38,13 +38,13 @@ export const columns: ColumnDef<Person>[] = [
 					variant='ghost'
 					onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
 				>
-					D.O.B
+					Dates
 					<ArrowUpDown className='ml-2 h-4 w-4' />
 				</Button>
 			);
 		},
 		cell: ({ row }) => (
-			<div className='text-[1rem] ml-4'>{row.getValue("birthdate")}</div>
+			<div className='text-[1rem] ml-4'>{row.getValue("datestring")}</div>
 		),
 	},
 	{

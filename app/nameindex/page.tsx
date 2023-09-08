@@ -10,11 +10,34 @@ type StringDict = {
 	[details: string]: string;
 };
 
-const getData = async () => {
-	const data = await fetch("/api").then((response) => {
-		return response.json();
-	});
-	return data;
+const fetchData = async () => {
+	const data = await fetch("/api");
+	const cleanData: any = await data.json();
+
+	for (const person of cleanData) {
+		person.datestring = "";
+		if (person.isdeceased === "true") {
+			if (person.birthdate) {
+				const birthyear = new Date(person.birthdate).getFullYear();
+				person.datestring += `${birthyear}-`;
+			} else {
+				person.datestring = "???? - ";
+			}
+
+			if (person.deathdate) {
+				const deathyear = new Date(person.deathdate).getFullYear();
+				person.datestring += `${deathyear}`;
+			} else {
+				person.datestring += "????";
+			}
+		} else {
+			if (person.birthdate) {
+				const birthyear = new Date(person.birthdate).getFullYear();
+				person.datestring = `b.${birthyear}`;
+			}
+		}
+	}
+	return cleanData;
 };
 
 export default function NameIndex() {
@@ -24,7 +47,7 @@ export default function NameIndex() {
 
 	const { isLoading, data } = useQuery({
 		queryKey: ["data"],
-		queryFn: getData,
+		queryFn: fetchData,
 	});
 
 	if (isLoading)
@@ -58,6 +81,7 @@ export default function NameIndex() {
 		obj.data = { ...obj };
 	}
 
+	console.log(data);
 	return (
 		<div className='flex flex-col items-center bg-white my-10'>
 			<h1 className='text-3xl lg:text-5xl font-bold text-center'>Name Index</h1>

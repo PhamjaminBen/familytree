@@ -18,9 +18,32 @@ interface EventType {
 }
 
 const fetchData = async () => {
-	const rawData = await fetch("/calendar/api");
-	const cleanData = await rawData.json();
-	return cleanData;
+	const rawCalendarData = await fetch("/calendar/api");
+	let calendarData = await rawCalendarData.json();
+	const rawPeopleData = await fetch("/api");
+	const peopleData = await rawPeopleData.json();
+	for (let person of peopleData) {
+		const birthDate = new Date(person.birthdate);
+		if (!Number.isNaN(birthDate.getDay())) {
+			for (let year = 2023; year < 2100; year++) {
+				calendarData = [
+					...calendarData,
+					{
+						allDay: true,
+						title: `Birthday - ${person.name}`,
+						start: birthDate.setFullYear(year),
+						id: uuid(),
+						extendedProps: {
+							description: "test description",
+						},
+						backgroundColor: "#f57177",
+						borderColor: "#f57177",
+					},
+				];
+			}
+		}
+	}
+	return calendarData;
 };
 
 export default function Calendar() {
