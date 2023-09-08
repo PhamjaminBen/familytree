@@ -59,6 +59,9 @@ export default function Calendar() {
 
 	return (
 		<>
+			<h1 className='text-3xl lg:text-5xl font-bold text-center mt-10'>
+				Event Calendar
+			</h1>
 			<Dialog.Root open={open} onOpenChange={setOpen} key='Info Popup'>
 				<Dialog.Portal>
 					<Dialog.Overlay className='bg-black/10 fixed inset-0' />

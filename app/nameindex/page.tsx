@@ -60,7 +60,8 @@ export default function NameIndex() {
 
 	return (
 		<div className='flex flex-col items-center bg-white my-10'>
-			<p className='text-left w-[95vw] xl:w-1/2 mb-5'>
+			<h1 className='text-3xl lg:text-5xl font-bold text-center'>Name Index</h1>
+			<p className='text-center md:text-left w-[95vw] xl:w-1/2 mb-5'>
 				Currently showing {data.length} names
 			</p>
 			<DataTable columns={columns} data={data} />
