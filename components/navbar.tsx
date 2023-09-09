@@ -8,7 +8,7 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { AiOutlineDown } from "react-icons/ai";
+import { BsCaretDownFill } from "react-icons/bs";
 
 export default function NavBar() {
 	return (
@@ -36,9 +36,9 @@ export default function NavBar() {
 					</li>
 					<li className='ml-auto sm:m-0'>
 						<DropdownMenu>
-							<DropdownMenuTrigger className='inline-flex items-center hover:bg-gray-100 p-2 rounded-xl transition-all duration-200'>
+							<DropdownMenuTrigger className='inline-flex items-end hover:bg-gray-100 p-2 rounded-xl transition-all duration-200'>
 								<h1 className='mr-1'>Family </h1>
-								<AiOutlineDown />
+								<BsCaretDownFill />
 							</DropdownMenuTrigger>
 							<DropdownMenuContent>
 								<DropdownMenuLabel className='text-xl font-bold'>
@@ -65,9 +65,9 @@ export default function NavBar() {
 					</li>
 					<li>
 						<DropdownMenu>
-							<DropdownMenuTrigger className='inline-flex items-center hover:bg-gray-100 p-2 rounded-xl transition-all duration-200'>
+							<DropdownMenuTrigger className='inline-flex items-end hover:bg-gray-100 p-2 rounded-xl transition-all duration-200'>
 								<h1 className='mr-1'>Events/Social</h1>
-								<AiOutlineDown />
+								<BsCaretDownFill />
 							</DropdownMenuTrigger>
 							<DropdownMenuContent>
 								<DropdownMenuLabel className='text-xl font-bold'>

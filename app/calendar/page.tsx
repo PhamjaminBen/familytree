@@ -22,8 +22,11 @@ const fetchData = async () => {
 	let calendarData = await rawCalendarData.json();
 	const rawPeopleData = await fetch("/api");
 	const peopleData = await rawPeopleData.json();
+
+	//adding birthdays to calendar
 	for (let person of peopleData) {
 		const birthDate = new Date(person.birthdate);
+		const birthYear = birthDate.getFullYear();
 		if (!Number.isNaN(birthDate.getDay())) {
 			for (let year = 2023; year < 2100; year++) {
 				calendarData = [
@@ -34,7 +37,9 @@ const fetchData = async () => {
 						start: birthDate.setFullYear(year),
 						id: uuid(),
 						extendedProps: {
-							description: "test description",
+							description: `Happy birthday to ${person.name}, who turns ${
+								year - birthYear
+							}!`,
 						},
 						backgroundColor: "#f57177",
 						borderColor: "#f57177",
@@ -43,6 +48,7 @@ const fetchData = async () => {
 			}
 		}
 	}
+
 	return calendarData;
 };
 
@@ -103,7 +109,7 @@ export default function Calendar() {
 						<fieldset className='mb-[15px] flex items-center gap-5'>
 							<label className='text-right text-lg'>Date:</label>
 							<h1
-								className='p-2 rounded-xl inline-flex h-[45px] w-full flex-1 items-center justify-center text-left text-lg'
+								className='p-2 rounded-xl inline-flex h-[45px] w-full text-left text-lg'
 								id='date'
 							>
 								{eventDate}
@@ -113,7 +119,7 @@ export default function Calendar() {
 				</Dialog.Portal>
 			</Dialog.Root>
 
-			<div className='max-h-screen max-w-6xl flex flex-col items-center justify-center m-auto mt-10 overflow-scroll'>
+			<div className='max-h-screen max-w-6xl px-5 flex flex-col items-center justify-center m-auto mt-10 overflow-scroll'>
 				<div className='w-full h-full'>
 					<FullCalendar
 						plugins={[dayGridPlugin]}
@@ -125,12 +131,12 @@ export default function Calendar() {
 							setEventDate(info.event.startStr);
 							setOpen(true);
 						}}
-						eventsSet={(events) => {
-							console.log("events");
-							for (let event of events) {
-								console.log(event.toJSON());
-							}
-						}}
+						// eventsSet={(events) => {
+						// 	console.log("events");
+						// 	for (let event of events) {
+						// 		console.log(event.toJSON());
+						// 	}
+						// }}
 					/>
 				</div>
 			</div>
