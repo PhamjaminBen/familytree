@@ -74,6 +74,7 @@ export default function AddMemberForm() {
 		register,
 		handleSubmit,
 		watch,
+		reset,
 		formState: { errors },
 		control,
 	} = useForm<Inputs>();
@@ -139,7 +140,8 @@ export default function AddMemberForm() {
 			<Confirmation
 				onSubmit={() => {
 					setSubmitted(false);
-					location.reload();
+					reset();
+					setImg("");
 				}}
 			/>
 		);
