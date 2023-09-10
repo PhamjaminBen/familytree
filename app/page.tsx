@@ -38,7 +38,7 @@ export default function Home() {
 					Family Tree
 				</Link>
 				<Link
-					href='/addmemberform'
+					href='/add-member-form'
 					className=' bg-[#9ac0dd] text-white py-5 px-7 w-56 rounded-full hover:bg-white hover:text-[#9ac0dd] hover:border-[#9ac0dd] border-white   border-2 active:text-2xl   m-1.5'
 				>
 					Add Member
@@ -50,7 +50,7 @@ export default function Home() {
 					Calendar
 				</Link>
 				<Link
-					href='/nameindex'
+					href='/name-index'
 					className=' bg-[#9ac0dd] text-white py-5 px-7 w-56 rounded-full hover:bg-white hover:text-[#9ac0dd] hover:border-[#9ac0dd] border-white   border-2 active:text-2xl   m-1.5'
 				>
 					Name Index

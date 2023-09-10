@@ -51,12 +51,12 @@ export default function NavBar() {
 									</Link>
 								</DropdownMenuItem>
 								<DropdownMenuItem>
-									<Link href='/nameindex' className='text-xl w-full'>
+									<Link href='/name-index' className='text-xl w-full'>
 										Name Index
 									</Link>
 								</DropdownMenuItem>
 								<DropdownMenuItem>
-									<Link href='/addmemberform' className='text-xl w-full'>
+									<Link href='/add-member-form' className='text-xl w-full'>
 										Register Family Member
 									</Link>
 								</DropdownMenuItem>
@@ -87,6 +87,11 @@ export default function NavBar() {
 								<DropdownMenuItem>
 									<Link href='/pham-legacy-program' className='text-xl w-full'>
 										Pham Legacy Program
+									</Link>
+								</DropdownMenuItem>
+								<DropdownMenuItem>
+									<Link href='/photo-gallery' className='text-xl w-full'>
+										Photo Gallery
 									</Link>
 								</DropdownMenuItem>
 							</DropdownMenuContent>

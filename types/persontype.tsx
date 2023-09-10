@@ -17,5 +17,5 @@ export type Person = {
 	pids?: string[];
 	portrait?: string;
 	profession?: string;
-	datestring: string;
+	datestring?: string;
 };

@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 
-export default function Confirmation(props: any) {
-	const { onSubmit } = props;
+interface ConfirmationProps {
+	onSubmit: () => any;
+}
+
+export default function Confirmation({ onSubmit }: ConfirmationProps) {
 	return (
 		<div className='h-full w-full flex flex-col justify-center items-center'>
 			<h1 className='text-center text-5xl font-bold absolute top-[40vh]'>
