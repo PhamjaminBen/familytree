@@ -19,7 +19,7 @@ export default async function RootLayout({
 	return (
 		<html lang='en' className={eb_Garamond.className}>
 			<body className='min-h-screen w-screen'>
-				<header className='sticky z-50 top-0'>
+				<header className='sticky z-20 top-0'>
 					<NavBar />
 				</header>
 				<main>{children}</main>

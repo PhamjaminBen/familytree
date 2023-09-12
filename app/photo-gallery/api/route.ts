@@ -12,3 +12,14 @@ export async function GET() {
 
 	return new Response(JSON.stringify(retobj));
 }
+
+export async function POST(request: Request) {
+	const retobj = [];
+	const client = await clientPromise;
+	const data = await request.json();
+	console.log(data);
+	const pictureDB = client.db("data").collection("pictureData");
+	pictureDB.insertOne(data.image);
+
+	return new Response(JSON.stringify({}));
+}
