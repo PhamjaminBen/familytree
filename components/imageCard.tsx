@@ -38,8 +38,8 @@ export default function ImageCard({ image, people }: ImageCardProps) {
 					/>
 				</Dialog.Trigger>
 				<Dialog.Portal className='bg-blue-500'>
-					<Dialog.Overlay className='bg-black/20 z-0 fixed inset-0' />
-					<Dialog.Content className=' bg-black max-h-[80%] w-[95%] md:w-[85%] lg:w-[75%] flex flex-col md:flex-row fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-xl'>
+					<Dialog.Overlay className='bg-black/20 z-20 fixed inset-0' />
+					<Dialog.Content className=' bg-black z-20 max-h-[90%] w-[95%] md:w-[85%] lg:w-[75%] flex flex-col md:flex-row fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-xl'>
 						<Image
 							src={image.url}
 							alt={image.title}
