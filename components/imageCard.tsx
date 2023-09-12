@@ -90,7 +90,7 @@ export default function ImageCard({ image, people }: ImageCardProps) {
 								const foundPerson = people.find((person) => person.id === id);
 								if (i === 3 && image.people.length > 4) {
 									return (
-										<li className='hover:underline'>
+										<li key={id} className='hover:underline'>
 											+{image.people.length - 4}
 										</li>
 									);
