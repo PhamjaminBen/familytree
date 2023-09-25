@@ -15,6 +15,8 @@ const fetchData = async () => {
 	const data = await fetch("/api");
 	const cleanData: Person[] = await data.json();
 
+	console.log(cleanData);
+
 	for (const person of cleanData) {
 		person.datestring = "";
 		if (person.isdeceased === "true") {

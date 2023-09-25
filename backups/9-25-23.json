@@ -1,0 +1,1461 @@
+[
+  {
+      "mid": "_mrkw",
+      "fid": "_0iwk",
+      "gender": "male",
+      "id": "_01ni",
+      "name": "Vuong Pham Albert Powers",
+      "birthdate": "1982-04-21",
+      "profession": "Photographer and Business Owner",
+      "hobbies": "brazilian jiu jitsu, 3d printing and design",
+      "biography": "",
+      "phone": "8134346647",
+      "email": "al@powersimagery.com",
+      "instagram": "@powersimagery",
+      "facebook": "https://www.facebook.com/albertpowers/",
+      "portrait": "http://res.cloudinary.com/dogeq8qft/image/upload/v1692384865/kkc0tdixfe5dcbqduwrg.jpg",
+      "pids": [],
+      "bio": "",
+      "tags": [
+          "gen5"
+      ],
+      "deathdate": "",
+      "isdeceased": "false",
+      "datestring": "b.1982"
+  },
+  {
+      "fid": "_u46a",
+      "gender": "male",
+      "id": "_3fso",
+      "name": "Phạm Đức Minh Trị",
+      "birthdate": "",
+      "profession": "Electrical Engineer, Real Estate/Mortgage Broker",
+      "hobbies": "Gym Exercise, tennis, options trading",
+      "biography": "",
+      "phone": "4082216480",
+      "email": "tridpham57@gmail.com",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "https://res.cloudinary.com/dogeq8qft/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1692384797/vpy6bjjswbeax4qbxc5g.jpg",
+      "pids": [
+          "_wkkm",
+          "_6043"
+      ],
+      "mid": "_zagq",
+      "bio": "Tri was an electrical engineer since 1982. He earned BSEE from Villanova University in 1982 and MSEE from San Jose State University in 1988. He retired from hi tech industry in 2004 to start free Lance career in real estate and mortgage.  He founded Selective Realty in 2004 and still active in business since. He enjoys gym exercises, tennis and part time option trading.eee",
+      "tags": [
+          "gen5"
+      ],
+      "datestring": ""
+  },
+  {
+      "id": "_u46a",
+      "name": "Pham Duc Kham",
+      "gender": "male",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "pids": [
+          "_zagq"
+      ],
+      "fid": "_icih",
+      "mid": "_9t9p",
+      "bio": "",
+      "tags": [
+          "gen4"
+      ],
+      "deathdate": "",
+      "isdeceased": "false",
+      "datestring": ""
+  },
+  {
+      "mid": "_dmd8",
+      "fid": "_bhfr",
+      "gender": "male",
+      "id": "_tf50",
+      "name": "Pham Quoc Vinh",
+      "birthdate": "2000-09-19",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "bio": "",
+      "pids": [],
+      "tags": [
+          "gen6"
+      ],
+      "datestring": "b.2000"
+  },
+  {
+      "pids": [
+          "_u46a"
+      ],
+      "gender": "female",
+      "id": "_zagq",
+      "name": "Thai Thi Thanh Cam",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "fid": "",
+      "mid": "",
+      "tags": [
+          "spouse"
+      ],
+      "deathdate": "",
+      "isdeceased": "false",
+      "datestring": ""
+  },
+  {
+      "mid": "_bhfr",
+      "fid": "_dmd8",
+      "gender": "female",
+      "id": "_f50p",
+      "name": "Pham Thuy Tien Julie",
+      "birthdate": "2003-02-23",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "bio": "",
+      "pids": [],
+      "tags": [
+          "gen6"
+      ],
+      "datestring": "b.2003"
+  },
+  {
+      "pids": [
+          "_icih"
+      ],
+      "gender": "female",
+      "id": "_9t9p",
+      "name": "Bui Thi Tinh",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "bio": "",
+      "fid": "",
+      "mid": "",
+      "tags": [
+          "spouse"
+      ],
+      "datestring": ""
+  },
+  {
+      "pids": [
+          "_913t"
+      ],
+      "gender": "male",
+      "id": "_xdv4",
+      "name": "Nguyen Thieu Huan",
+      "birthdate": "1953-07-10",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "bio": "",
+      "fid": "",
+      "mid": "",
+      "tags": [
+          "spouse"
+      ],
+      "datestring": "b.1953"
+  },
+  {
+      "mid": "_xdv4",
+      "fid": "_913t",
+      "gender": "male",
+      "id": "_gqqk",
+      "name": "Nguyen Thieu Quang, Jason",
+      "birthdate": "1986-12-24",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "bio": "",
+      "pids": [],
+      "tags": [
+          "gen6"
+      ],
+      "datestring": "b.1986"
+  },
+  {
+      "mid": "_u46a",
+      "fid": "_zagq",
+      "gender": "male",
+      "id": "_lwwf",
+      "name": "Phạm Thái Hòa",
+      "birthdate": "",
+      "profession": "sehhess",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "pids": [
+          "_wxii"
+      ],
+      "bio": "",
+      "tags": [
+          "gen5"
+      ],
+      "datestring": ""
+  },
+  {
+      "gender": "male",
+      "id": "_icih",
+      "pids": [
+          "_9t9p"
+      ],
+      "name": "Pham Đức Thứu",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "bio": "",
+      "fid": "_qneq",
+      "mid": "",
+      "tags": [
+          "gen3"
+      ],
+      "datestring": ""
+  },
+  {
+      "pids": [
+          "_r6mw"
+      ],
+      "gender": "male",
+      "id": "_rydn",
+      "name": "William Chan",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "bio": "",
+      "fid": "",
+      "mid": "",
+      "tags": [
+          "spouse"
+      ],
+      "datestring": ""
+  },
+  {
+      "mid": "_r6mw",
+      "fid": "_rydn",
+      "gender": "female",
+      "id": "_ob4o",
+      "name": "Jade Athena Thi Chan",
+      "birthdate": "2023-08-26",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "bio": "",
+      "pids": [],
+      "tags": [
+          "gen7"
+      ],
+      "datestring": "b.2023"
+  },
+  {
+      "gender": "male",
+      "id": "_qneq",
+      "name": "Pham Nhu Xuan",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "fid": "_5qz7",
+      "mid": "",
+      "tags": [
+          "gen2"
+      ],
+      "datestring": ""
+  },
+  {
+      "mid": "_u46a",
+      "fid": "_zagq",
+      "gender": "male",
+      "id": "_3bs1",
+      "name": "Pham Duc Minh Trung",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [
+          "_2kxl"
+      ],
+      "tags": [
+          "gen5"
+      ],
+      "datestring": ""
+  },
+  {
+      "pids": [
+          "_3bs1"
+      ],
+      "gender": "female",
+      "id": "_2kxl",
+      "name": "Nguyen Thi Tam Dan",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "fid": "",
+      "mid": "",
+      "tags": [
+          "spouse"
+      ],
+      "datestring": ""
+  },
+  {
+      "mid": "_u46a",
+      "fid": "_zagq",
+      "gender": "male",
+      "id": "_bhfr",
+      "name": "Pham Quoc Dan",
+      "birthdate": "1964-07-31",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "bio": "",
+      "pids": [
+          "_dmd8"
+      ],
+      "tags": [
+          "gen5"
+      ],
+      "datestring": "b.1964"
+  },
+  {
+      "mid": "_u46a",
+      "fid": "_zagq",
+      "gender": "male",
+      "id": "_14vc",
+      "name": "Pham Minh Hieu",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "tags": [
+          "gen5"
+      ],
+      "datestring": ""
+  },
+  {
+      "fid": "_lwwf",
+      "gender": "male",
+      "id": "_srsd",
+      "name": "Pham Minh Triet, Timothy",
+      "birthdate": "1995-03-27",
+      "profession": "Trainer",
+      "hobbies": "Fight, eat, draw",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "https://res.cloudinary.com/dogeq8qft/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1693259819/gwykgmrjmz1f06uzingn.png",
+      "biography": "",
+      "pids": [],
+      "mid": "_wxii",
+      "bio": "",
+      "tags": [
+          "gen6"
+      ],
+      "datestring": "b.1995"
+  },
+  {
+      "mid": "_3fso",
+      "gender": "male",
+      "id": "_yuel",
+      "name": "Pham Duc Nang Tich, Oliver",
+      "birthdate": "1996-06-03",
+      "profession": "Marketing/Communication Specialist & Real Estate Broker Associate",
+      "hobbies": "Martial arts, watches, fashion, and horror movies",
+      "phone": "14086803576",
+      "email": "olivernpham@gmail.com",
+      "instagram": "https://www.instagram.com/olivernpham/",
+      "facebook": "https://www.facebook.com/lReViLo",
+      "portrait": "http://res.cloudinary.com/dogeq8qft/image/upload/v1692574636/p6vnq0rpsv1nvptcmecg.jpg",
+      "biography": "",
+      "pids": [],
+      "bio": "My name is Pham Duc Nang Tich, but you can call me by Tich (my Vietnamese name) or Oliver (my English name). I am the son of Pham Duc Minh Tri and Ho Duong Hai. I'm really excited about this website and the potential it has for all of us to share our experiences. Let's connect!",
+      "fid": "_6043",
+      "tags": [
+          "gen6"
+      ],
+      "datestring": "b.1996"
+  },
+  {
+      "mid": "_3fso",
+      "gender": "female",
+      "id": "_8dr5",
+      "name": "Pham Bich Chieu",
+      "birthdate": "1993-10-09",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "fid": "_6043",
+      "tags": [
+          "gen6"
+      ],
+      "datestring": "b.1993"
+  },
+  {
+      "mid": "_dmd8",
+      "fid": "_bhfr",
+      "gender": "female",
+      "id": "_9k3r",
+      "name": "Pham Bich Ngoc Jacqueline",
+      "birthdate": "2005-04-21",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "bio": "",
+      "pids": [],
+      "tags": [
+          "gen6"
+      ],
+      "datestring": "b.2005"
+  },
+  {
+      "mid": "_u46a",
+      "fid": "_zagq",
+      "gender": "female",
+      "id": "_913t",
+      "name": "Pham T Ngoc Han",
+      "birthdate": "1958-05-19",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "bio": "",
+      "pids": [
+          "_xdv4"
+      ],
+      "tags": [
+          "gen5"
+      ],
+      "datestring": "b.1958"
+  },
+  {
+      "mid": "_u46a",
+      "fid": "_zagq",
+      "gender": "male",
+      "id": "_tlap",
+      "name": "Pham Duc Minh Quyen",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [
+          "_thyt"
+      ],
+      "tags": [
+          "gen5"
+      ],
+      "datestring": ""
+  },
+  {
+      "pids": [
+          "_3fso"
+      ],
+      "gender": "female",
+      "id": "_wkkm",
+      "name": "Ton Nu Tram Anh",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "fid": "",
+      "mid": "",
+      "tags": [
+          "spouse"
+      ],
+      "datestring": ""
+  },
+  {
+      "mid": "_tlap",
+      "fid": "_thyt",
+      "gender": "male",
+      "id": "_goh6",
+      "name": "Pham Duc Minh Quy, Benjamin",
+      "birthdate": "2002-12-23",
+      "profession": "",
+      "hobbies": "Volleyball, Basketball",
+      "phone": "(669)-600-1290",
+      "email": "bendmpham@gmail.com",
+      "instagram": "@bendpham",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "bio": "Currently attending UCI as a computer science major.",
+      "tags": [
+          "gen6"
+      ],
+      "datestring": "b.2002"
+  },
+  {
+      "mid": "_tlap",
+      "fid": "_thyt",
+      "gender": "female",
+      "id": "_e13e",
+      "name": "Pham Minh Megan",
+      "birthdate": "2005-01-29",
+      "profession": "",
+      "hobbies": "bruh",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "tags": [
+          "gen6"
+      ],
+      "deathdate": "",
+      "isdeceased": "false",
+      "datestring": "b.2005"
+  },
+  {
+      "pids": [
+          "_tlap"
+      ],
+      "gender": "female",
+      "id": "_thyt",
+      "name": "Buu Thao",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "fid": "",
+      "mid": "",
+      "tags": [
+          "spouse"
+      ],
+      "datestring": ""
+  },
+  {
+      "mid": "_thyt",
+      "fid": "_tlap",
+      "gender": "male",
+      "id": "_jpp7",
+      "name": "Pham Duc Minh Dang, Aaron",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "tags": [
+          "gen6"
+      ],
+      "datestring": ""
+  },
+  {
+      "mid": "_icih",
+      "fid": "_9t9p",
+      "gender": "male",
+      "id": "_0iwk",
+      "name": "Khoat Duc Pham",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "pids": [
+          "_mrkw"
+      ],
+      "bio": "",
+      "tags": [
+          "gen4"
+      ],
+      "datestring": ""
+  },
+  {
+      "mid": "_r6mw",
+      "fid": "_rydn",
+      "gender": "male",
+      "id": "_nkvn",
+      "name": "Jett Chan",
+      "birthdate": "2021-05-25",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "bio": "",
+      "pids": [],
+      "tags": [
+          "gen7"
+      ],
+      "datestring": "b.2021"
+  },
+  {
+      "mid": "_913t",
+      "fid": "_xdv4",
+      "gender": "female",
+      "id": "_r6mw",
+      "name": "Nguyen T Phuong Tan",
+      "birthdate": "1988-10-24",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "bio": "",
+      "pids": [
+          "_rydn"
+      ],
+      "tags": [
+          "gen6"
+      ],
+      "datestring": "b.1988"
+  },
+  {
+      "mid": "_icih",
+      "fid": "_9t9p",
+      "gender": "female",
+      "id": "_du5y",
+      "name": "Pham Thi An Khang",
+      "birthdate": "1954-10-16",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [
+          "_kglp"
+      ],
+      "tags": [
+          "gen4"
+      ],
+      "datestring": "b.1954"
+  },
+  {
+      "mid": "_3bs1",
+      "fid": "_2kxl",
+      "gender": "male",
+      "id": "_xlsd",
+      "name": "Pham Duc Minh Trung Bon, Michael",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "tags": [
+          "gen6"
+      ],
+      "datestring": ""
+  },
+  {
+      "pids": [
+          "_du5y"
+      ],
+      "gender": "male",
+      "id": "_kglp",
+      "name": "Hua Lien",
+      "birthdate": "1952-04-20",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "fid": "",
+      "mid": "",
+      "tags": [
+          "spouse"
+      ],
+      "datestring": "b.1952"
+  },
+  {
+      "mid": "_du5y",
+      "fid": "_kglp",
+      "gender": "female",
+      "id": "_o3jb",
+      "name": "Hua Tuong Vi",
+      "birthdate": "1982-07-27",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [
+          "_7tun"
+      ],
+      "tags": [
+          "gen5"
+      ],
+      "datestring": "b.1982"
+  },
+  {
+      "pids": [
+          "_o3jb"
+      ],
+      "gender": "male",
+      "id": "_7tun",
+      "name": "Sean Olson",
+      "birthdate": "1973-03-27",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "fid": "",
+      "mid": "",
+      "tags": [
+          "spouse"
+      ],
+      "datestring": "b.1973"
+  },
+  {
+      "mid": "_7tun",
+      "fid": "_o3jb",
+      "gender": "female",
+      "id": "_aiuz",
+      "name": "Thalia An Hua Olson",
+      "birthdate": "2018-02-16",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "tags": [
+          "gen6"
+      ],
+      "datestring": "b.2018"
+  },
+  {
+      "mid": "_kglp",
+      "fid": "_du5y",
+      "gender": "female",
+      "id": "_1daf",
+      "name": "Hua Tuong Uyen",
+      "birthdate": "1985-07-19",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "tags": [
+          "gen5"
+      ],
+      "datestring": "b.1985"
+  },
+  {
+      "mid": "_o3jb",
+      "fid": "_7tun",
+      "gender": "male",
+      "id": "_6g6b",
+      "name": "Damian Lien Olson",
+      "birthdate": "2019-11-05",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "tags": [
+          "gen6"
+      ],
+      "datestring": "b.2019"
+  },
+  {
+      "pids": [
+          "_lwwf"
+      ],
+      "gender": "female",
+      "id": "_wxii",
+      "name": "Pham Thanh Nguyen",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "fid": "",
+      "mid": "",
+      "tags": [
+          "spouse"
+      ],
+      "datestring": ""
+  },
+  {
+      "pids": [
+          "_3fso"
+      ],
+      "gender": "female",
+      "id": "_6043",
+      "name": "Ho Thi Hai Duong",
+      "birthdate": "1958-01-20",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "fid": "",
+      "mid": "",
+      "tags": [
+          "spouse"
+      ],
+      "datestring": "b.1958"
+  },
+  {
+      "mid": "_3bs1",
+      "fid": "_2kxl",
+      "gender": "female",
+      "id": "_ffuu",
+      "name": "Pham Connie",
+      "birthdate": "",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "tags": [
+          "gen6"
+      ],
+      "datestring": ""
+  },
+  {
+      "pids": [
+          "_0iwk"
+      ],
+      "gender": "male",
+      "id": "_mrkw",
+      "name": "Velvet Powers",
+      "birthdate": "1960-02-21",
+      "profession": "Business owner",
+      "hobbies": "Playing Video games and travel",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "https://www.facebook.com/velvet.powers.9",
+      "portrait": "https://res.cloudinary.com/dogeq8qft/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1692820597/ucsu1xatqpttnb4jauam.jpg",
+      "bio": "",
+      "fid": "",
+      "mid": "",
+      "tags": [
+          "spouse"
+      ],
+      "datestring": "b.1960"
+  },
+  {
+      "pids": [
+          "_bhfr"
+      ],
+      "gender": "female",
+      "id": "_dmd8",
+      "name": "Le Thi Thanh Huong",
+      "birthdate": "1970-09-20",
+      "profession": "",
+      "hobbies": "",
+      "biography": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "bio": "",
+      "fid": "",
+      "mid": "",
+      "tags": [
+          "spouse"
+      ],
+      "datestring": "b.1970"
+  },
+  {
+      "mid": "_lwwf",
+      "gender": "female",
+      "id": "_k77l",
+      "name": "Phạm Xuân Phiên, Nicole",
+      "birthdate": "",
+      "profession": "Product management in government technology",
+      "hobbies": "flower arranging, reading, learning to surf",
+      "phone": "",
+      "email": "pham.xpn@gmail.com",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "https://res.cloudinary.com/dogeq8qft/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1693321251/wbvjpjrct62ehmy7fxt9.png",
+      "biography": "",
+      "pids": [],
+      "fid": "_wxii",
+      "bio": "",
+      "tags": [
+          "gen6"
+      ],
+      "deathdate": "",
+      "datestring": ""
+  },
+  {
+      "mid": "_icih",
+      "fid": "_9t9p",
+      "gender": "male",
+      "id": "_trye",
+      "name": "Pham Duc Khien",
+      "birthdate": "1936-04-08",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [
+          "_oi9s"
+      ],
+      "datestring": "b.1936"
+  },
+  {
+      "pids": [
+          "_trye"
+      ],
+      "gender": "female",
+      "id": "_oi9s",
+      "name": "Nguyen Thi Hai Loc",
+      "birthdate": "1937-01-24",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "datestring": "b.1937"
+  },
+  {
+      "mid": "_trye",
+      "fid": "_oi9s",
+      "gender": "female",
+      "id": "_yonl",
+      "name": "Pham Thi Tuyet Anh",
+      "birthdate": "1955-08-21",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "datestring": "b.1955"
+  },
+  {
+      "mid": "_trye",
+      "fid": "_oi9s",
+      "gender": "male",
+      "id": "_qu94",
+      "name": "Pham Duc Trung Kien",
+      "birthdate": "1958-03-01",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [
+          "_vk9l"
+      ],
+      "datestring": "b.1958"
+  },
+  {
+      "pids": [
+          "_qu94"
+      ],
+      "gender": "female",
+      "id": "_vk9l",
+      "name": "Phan Thi Thuy",
+      "birthdate": "1974-08-15",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "datestring": "b.1974"
+  },
+  {
+      "mid": "_qu94",
+      "fid": "_vk9l",
+      "gender": "female",
+      "id": "_q7ns",
+      "name": "Pham Thien Tam",
+      "birthdate": "2002-05-30",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "datestring": "b.2002"
+  },
+  {
+      "mid": "_qu94",
+      "fid": "_vk9l",
+      "gender": "female",
+      "id": "_rcdx",
+      "name": "Pham Thien An",
+      "birthdate": "2006-10-30",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "datestring": "b.2006"
+  },
+  {
+      "mid": "_vk9l",
+      "fid": "_qu94",
+      "gender": "male",
+      "id": "_t8fl",
+      "name": "Pham Thien Minh",
+      "birthdate": "2010-10-23",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "datestring": "b.2010"
+  },
+  {
+      "mid": "_trye",
+      "fid": "_oi9s",
+      "gender": "female",
+      "id": "_p18e",
+      "name": "Pham Thi Tu Anh",
+      "birthdate": "1960-05-24",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "datestring": "b.1960"
+  },
+  {
+      "mid": "_p18e",
+      "gender": "female",
+      "id": "_gheo",
+      "name": "Tran Viet Chi",
+      "birthdate": "1991-07-09",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [
+          "_968f"
+      ],
+      "datestring": "b.1991"
+  },
+  {
+      "pids": [
+          "_gheo"
+      ],
+      "gender": "male",
+      "id": "_968f",
+      "name": "David Huang",
+      "birthdate": "1988-06-14",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "datestring": "b.1988"
+  },
+  {
+      "mid": "_p18e",
+      "gender": "female",
+      "id": "_bqln",
+      "name": "Tran Viet Co",
+      "birthdate": "1994-11-04",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "datestring": "b.1994"
+  },
+  {
+      "mid": "_oi9s",
+      "fid": "_trye",
+      "gender": "female",
+      "id": "_3di2",
+      "name": "Pham Thi Tuong Anh",
+      "birthdate": "1962-10-24",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "datestring": "b.1962"
+  },
+  {
+      "mid": "_oi9s",
+      "fid": "_trye",
+      "gender": "female",
+      "id": "_8kep",
+      "name": "Pham Thi To Anh",
+      "birthdate": "1964-06-02",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "datestring": "b.1964"
+  },
+  {
+      "mid": "_trye",
+      "fid": "_oi9s",
+      "gender": "female",
+      "id": "_x4ee",
+      "name": "Pham Thi Tam Anh",
+      "birthdate": "1965-06-11",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "datestring": "b.1965"
+  },
+  {
+      "mid": "_trye",
+      "fid": "_oi9s",
+      "gender": "male",
+      "id": "_6dh5",
+      "name": "Pham Duc Dang Khoa",
+      "birthdate": "1966-11-30",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [
+          "_02w2"
+      ],
+      "datestring": "b.1966"
+  },
+  {
+      "pids": [
+          "_6dh5"
+      ],
+      "gender": "female",
+      "id": "_02w2",
+      "name": "Nguyen Lina Ngoc",
+      "birthdate": "1979-09-16",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "datestring": "b.1979"
+  },
+  {
+      "mid": "_6dh5",
+      "fid": "_02w2",
+      "gender": "female",
+      "id": "_doau",
+      "name": "Pham Nahla Tien",
+      "birthdate": "2012-08-24",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "datestring": "b.2012"
+  },
+  {
+      "mid": "_6dh5",
+      "fid": "_02w2",
+      "gender": "female",
+      "id": "_f2a0",
+      "name": "Pham Ella Quyen",
+      "birthdate": "2014-05-26",
+      "deathdate": "",
+      "isdeceased": "false",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "datestring": "b.2014"
+  },
+  {
+      "gender": "male",
+      "id": "_5qz7",
+      "name": "Pham Duc Dien",
+      "birthdate": "2023-09-20",
+      "profession": "",
+      "hobbies": "",
+      "phone": "",
+      "email": "",
+      "instagram": "",
+      "facebook": "",
+      "portrait": "",
+      "biography": "",
+      "pids": [],
+      "fid": "",
+      "mid": "",
+      "tags": [
+          "gen1"
+      ],
+      "deathdate": "1900-11-11",
+      "isdeceased": "true",
+      "datestring": "2023-1900"
+  }
+]
