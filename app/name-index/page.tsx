@@ -73,11 +73,15 @@ export default function NameIndex() {
 		NameDict[obj.id] = obj.name;
 	}
 
-	console.log(data);
 	for (let obj of data) {
 		obj.father = NameDict[obj.fid];
 		obj.mother = NameDict[obj.mid];
-		obj.marriage = obj.pids.map((id: string) => NameDict[id]);
+		console.log(obj);
+		if (obj.pids) {
+			obj.marriage = obj.pids.map((id: string) => NameDict[id]);
+		} else {
+			obj.marriage = [];
+		}
 		obj.data = { ...obj };
 	}
 
